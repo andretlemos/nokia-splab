@@ -16,6 +16,9 @@ The goal is to build a realistic service-provider-style topology for testing rou
 
 The main topology is defined in [clab/lab.clab.yml](clab/lab.clab.yml).
 
+[Topology](clab/nokia-splab.png)
+
+
 ### Devices included
 - Core routers: p1, p2, p3, p4
 - Provider edge routers: pe1, pe2, pe3, pe4
@@ -28,20 +31,7 @@ The main topology is defined in [clab/lab.clab.yml](clab/lab.clab.yml).
 - Each PE router establishes eBGP peering with one AS router
 - Client hosts are connected to pe3 and pe4
 
-### Simplified view
-
-```text
-      p1 ---- p2
-     /  \    /  \
-   pe1  p3--p4  pe2
-     \   |    |  /
-      \  |    | /
-       pe3----pe4
-        |      |
-      client1 client2
-```
-
-For running this lab is required SR-SIM license file and adjust the file clab;lab.clab.yml
+### For running this lab is required SR-SIM license file and adjust the file clab;lab.clab.yml
 
 ## Repository structure
 
