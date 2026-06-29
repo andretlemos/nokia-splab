@@ -1,0 +1,61 @@
+hostname AS1
+!
+no aaa new-model
+!
+ip domain name lab
+!
+ip cef
+!
+ipv6 unicast-routing
+!
+no ip domain lookup
+!
+username admin privilege 15 secret admin
+!
+vrf definition clab-mgmt
+ description clab-mgmt
+ address-family ipv4
+ !
+ address-family ipv6
+ !
+!
+interface Ethernet0/0
+
+ vrf forwarding clab-mgmt
+ description clab-mgmt
+ ip address 10.10.1.1 255.255.0.0
+ ipv6 address 2001:db8:ffff:100::1/48
+ no shutdown
+!
+interface Ethernet0/1
+ no shutdown
+!
+ip forward-protocol nd
+!
+ip route vrf clab-mgmt 0.0.0.0 0.0.0.0 Ethernet0/0 10.10.0.1
+ipv6 route vrf clab-mgmt ::/0 Ethernet0/0 2001:db8:ffff::1
+!
+ip ssh version 2
+crypto key generate rsa modulus 2048
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+
+interface Loopback 0
+ ip address 1.1.1.1 255.255.255.255
+ ipv6 address 2001:db8:100::1/128 
+
+interface Ethernet0/1
+ ip address 192.168.1.1 255.255.255.254
+ ipv6 address 2001:db8:10:1::1/127
+ no shutdown
+
+router bgp 65100
+ network 1.1.1.1 mask 255.255.255.255
+ neighbor 192.168.1.0 remote-as 65500
+ neighbor 2001:db8:10:1:: remote-as 65500
+ address-family ipv6 unicast
+ neighbor 2001:db8:10:1:: activate
+ network 2001:db8:100::1/128 

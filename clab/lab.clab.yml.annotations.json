@@ -1,0 +1,122 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "p1",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 220,
+        "y": 260
+      }
+    },
+    {
+      "id": "p2",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 340,
+        "y": 120
+      }
+    },
+    {
+      "id": "p3",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 360,
+        "y": 380
+      }
+    },
+    {
+      "id": "p4",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 460,
+        "y": 220
+      }
+    },
+    {
+      "id": "pe1",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 220,
+        "y": 420
+      }
+    },
+    {
+      "id": "pe2",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 480,
+        "y": 20
+      }
+    },
+    {
+      "id": "pe3",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 360,
+        "y": 580
+      }
+    },
+    {
+      "id": "pe4",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 640,
+        "y": 260
+      }
+    },
+    {
+      "id": "as1",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 400,
+        "y": 480
+      }
+    },
+    {
+      "id": "as2",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 640,
+        "y": 20
+      }
+    },
+    {
+      "id": "as3",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 340,
+        "y": 740
+      }
+    },
+    {
+      "id": "as4",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 560,
+        "y": 380
+      }
+    },
+    {
+      "id": "client1",
+      "position": {
+        "x": 500,
+        "y": 680
+      }
+    },
+    {
+      "id": "client2",
+      "position": {
+        "x": 780,
+        "y": 360
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}

@@ -1,0 +1,18 @@
+[project]
+name = "nokia-splab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ansible>=13.7.0",
+    "dotenv>=0.9.9",
+    "nornir>=3.5.0",
+    "nornir-jinja2>=0.2.0",
+    "nornir-netbox>=0.3.0",
+    "nornir-pygnmi>=0.2.0",
+    "nornir-rich>=0.2.0",
+    "pynetbox>=7.7.0",
+    "pysros>=26.3.3",
+    "pytz>=2026.2",
+]

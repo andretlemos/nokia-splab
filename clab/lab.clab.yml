@@ -1,0 +1,73 @@
+name: sros-splab
+prefix: ""
+
+mgmt:
+  network: sros-splab-network
+  ipv4-subnet: 10.10.0.0/16
+
+topology:
+  groups:
+    nokia_srsim:
+      kind: nokia_srsim
+      image: srsim:26.3.R2
+      license: ./SR_SIM_license.txt
+      type: sr-1
+
+    vm:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+
+    cisco:
+      kind: cisco_iol
+      image: ghcr.io/autonetops/autonetops_labs/cisco_iol
+
+  nodes:
+    p1: { group: nokia_srsim, mgmt-ipv4: 10.10.10.1 }
+    p2: { group: nokia_srsim, mgmt-ipv4: 10.10.10.2 }
+    p3: { group: nokia_srsim, mgmt-ipv4: 10.10.10.3 }
+    p4: { group: nokia_srsim, mgmt-ipv4: 10.10.10.4 }
+
+    pe1: { group: nokia_srsim, mgmt-ipv4: 10.10.11.1 }
+    pe2: { group: nokia_srsim, mgmt-ipv4: 10.10.11.2 }
+    pe3: { group: nokia_srsim, mgmt-ipv4: 10.10.11.3 }
+    pe4: { group: nokia_srsim, mgmt-ipv4: 10.10.11.4 }
+
+    as1: { group: cisco, mgmt-ipv4: 10.10.1.1 }
+    as2: { group: cisco, mgmt-ipv4: 10.10.2.2 }
+    as3: { group: cisco, mgmt-ipv4: 10.10.3.3 }
+    as4: { group: cisco, mgmt-ipv4: 10.10.4.4 }
+
+    client1:
+      kind: linux
+      group: vm
+      exec:
+        - ip address add 172.21.10.60/24 dev eth1
+
+    client2:
+      kind: linux
+      group: vm
+      exec:
+        - ip address add 172.22.10.60/24 dev eth1
+
+  links:
+    # ✅ Core ring
+    - endpoints: ["p1:1/1/c1/1", "p2:1/1/c1/1"]
+    - endpoints: ["p2:1/1/c1/2", "p4:1/1/c1/1"]
+    - endpoints: ["p1:1/1/c1/2", "p3:1/1/c1/1"]
+    - endpoints: ["p3:1/1/c1/2", "p4:1/1/c1/2"]
+
+    # ✅ PE to Core
+    - endpoints: ["pe1:1/1/c1/1", "p1:1/1/c1/3"]
+    - endpoints: ["pe2:1/1/c1/1", "p2:1/1/c1/3"]
+    - endpoints: ["pe3:1/1/c1/1", "p3:1/1/c1/3"]
+    - endpoints: ["pe4:1/1/c1/1", "p4:1/1/c1/3"]
+
+    # ✅ eBGP
+    - endpoints: ["pe1:1/1/c1/2", "as1:eth1"]
+    - endpoints: ["pe2:1/1/c1/2", "as2:eth1"]
+    - endpoints: ["pe3:1/1/c1/2", "as3:eth1"]
+    - endpoints: ["pe4:1/1/c1/2", "as4:eth1"]
+
+    # ✅ Clients
+    - endpoints: ["pe3:1/1/c1/3", "client1:eth1"]
+    - endpoints: ["pe4:1/1/c1/3", "client2:eth1"]

@@ -1,0 +1,11 @@
+inventory:
+  plugin: "NetBoxInventory2"
+  options:
+    #nb_url: "http://localhost:8000"
+    #nb_token: "D4ZNE8WwqakJy2stPn1psWjwqJvcv0YVK4S6uMpu"
+    defaults_file: "inventory/defaults.yaml"
+
+runner:
+  plugin: threaded
+  options:
+    num_workers: 10

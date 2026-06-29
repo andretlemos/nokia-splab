@@ -1,0 +1,53 @@
+{
+  "nokia-conf:configure": {
+    "card": [
+      {
+        "slot-number": 1,
+        "admin-state": "enable",
+        "card-type": "iom-1",
+        "mda": [
+          {
+            "mda-slot": 1,
+            "admin-state": "enable",
+            "mda-type": "me6-100gb-qsfp28"
+          }
+        ]
+      }
+    ],
+    "port": [
+      {
+        "port-id": "1/1/c1",
+        "admin-state": "enable",
+        "connector": {
+          "breakout": "c1-100g"
+        }
+      }
+    ],
+    "system": {
+      "name": "P3",
+      "time": {
+        "ntp": {
+          "admin-state": "enable",
+          "server": [
+            {
+              "ip-address": "200.160.0.8",
+              "router-instance": "Base"
+            },
+            {
+              "ip-address": "2001:12f8:9:1::8",
+              "router-instance": "Base"
+            },
+            {
+              "ip-address": "200.189.40.8",
+              "router-instance": "Base"
+            },
+            {
+              "ip-address": "2001:12f8:b:1::8",
+              "router-instance": "Base"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

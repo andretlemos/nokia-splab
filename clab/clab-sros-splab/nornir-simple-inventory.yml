@@ -1,0 +1,71 @@
+---
+as1:
+    username: admin
+    password: admin
+    platform: cisco_iol
+    hostname: 10.10.1.1
+as2:
+    username: admin
+    password: admin
+    platform: cisco_iol
+    hostname: 10.10.2.2
+as3:
+    username: admin
+    password: admin
+    platform: cisco_iol
+    hostname: 10.10.3.3
+as4:
+    username: admin
+    password: admin
+    platform: cisco_iol
+    hostname: 10.10.4.4
+client1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 10.10.0.3
+client2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 10.10.0.2
+p1:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.10.1
+p2:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.10.2
+p3:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.10.3
+p4:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.10.4
+pe1:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.11.1
+pe2:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.11.2
+pe3:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.11.3
+pe4:
+    username: admin
+    password: NokiaSros1!
+    platform: nokia_srsim
+    hostname: 10.10.11.4

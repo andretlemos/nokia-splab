@@ -1,0 +1,39 @@
+# TiMOS-B-26.3.R2 both/x86_64 Nokia 7750 SR-1 Copyright (c) 2000-2026 Nokia.
+# All rights reserved. All use subject to applicable license agreements.
+# Built on Wed Apr 22 19:19:59 UTC 2026 by builder in /builds/263B/R2/panos
+# Configuration format version 26.3 revision 0
+
+# Generated 2026-06-29T12:30:16.9Z by admin from 10.10.0.1
+# Commit ID 2
+#   Committed 2026-06-29T12:30:16.9Z by admin (gNMI) from 10.10.0.1
+
+    configure {
++       port 1/1/c1 {
++           admin-state enable
++           connector {
++               breakout c1-100g
++           }
++       }
+        system {
+-           name "p3"
++           name "P3"
++           time {
++               ntp {
++                   server 200.160.0.8 router-instance "Base" {
++                   }
++                   server 200.189.40.8 router-instance "Base" {
++                   }
++                   server 2001:12f8:9:1::8 router-instance "Base" {
++                   }
++                   server 2001:12f8:b:1::8 router-instance "Base" {
++                   }
++               }
++           }
+        }
+    }
+
+persistent-indices {
+    description "Persistent indices are maintained by the system and must not be modified."
+}
+
+# Finished 2026-06-29T12:30:17.0Z

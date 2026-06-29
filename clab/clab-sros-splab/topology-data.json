@@ -1,0 +1,752 @@
+{
+  "name": "sros-splab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "",
+      "mgmt": {
+        "network": "sros-splab-network",
+        "bridge": "br-bdc87b8a7774",
+        "ipv4-subnet": "10.10.0.0/16",
+        "ipv4-gw": "10.10.0.1",
+        "ipv6-gw": "fe80::ccd4:e7ff:fef8:85e7",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDjM5YdYiN7QcJAoOwtVh8QIPCHaXqpMRAlQpnGD3/u/s5miiDztghtFvhDmBrxxTmyrow3Uz7taPedXsMVn95Lm7yNMFAlm30B3sgsrAGVrsGjQ5ldeGihOJRn9Oroy8bdjBaNrHvDY7waFqCYZTnqNBgSpQHYUEkPL2Er/ypgvKJE4J5zKd/76MdTkTOoz1IbQJKVF7yRILTPQnwLI93qS13jU3sBrBW7NLGv9U8QmMIR3GYkjvCdDsAOAqJQVWhxk+sbL4aG4APUfj5qrZmVJmQ69hfTm/Hq4x2r4VuZK9vAfvj8k5C/KhtQEm1KZHcKwcr7rdRXb+QdO9XBs3bohbC3pmZsQUP0OYf6G8fNcqTwRU3eKj/gcYhc7ABOhLwgnbqqvxbChWZqIv5C66G3z8jSEdvMIb9+Z6lUhqe5cgLiTEj5GmGjK2mF0m516mQiGwf2t/BTy9TnJc9OzvI/hHZ3O0Ya845NkFbTt/Ah1Bs9pEe6UWf7UN85uQn28M6v0Jk06jBUuv9TQBKv09G1ox40mCB1wItyd0UJvO5dNogC1wuujZqwwCThcjKquqtoRGGf+w6/gWhmWEtba7ClchfZiobkCm88EkqVx5gJyeURzUH6YcUVud3s29qSuFLEiCPqkP/sOTYxHSH7o1p0+gFI2xaMWGHrxTGbN4Fgpw==","ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6jCsLMZWmSVOPGyJw67be2ICjYQye8TNoYsNto2PpxT8HzAhg1ocJ29c9qcp8opW51bBOlADh+Wi5Cuej229LsySERLRNxMjbjG2+97U8eASIC8OeU0MCda9/hTBxXrxANimh1gDTmt4v99rbfRC1rhhw+JLHc4uZfFb7hDg3by2ShIBGcI4YxjteoaCC2ZDc0wcsh3EUt96/7OT3OdkJikVy9kviXSms/FCMYXy7ztQ9LnJ0WVthwRSlE6cgdKNPuPZojGCoQi7k0rZuZYYjXuq4EkCHT+RboSs12A6aeoOTkC07yW80/nb8639TcyNkHGHc3dPEaZIzBiHT3j86ijmky614zQYbIWeTRbPVM+BRV7XaF/5JS8WOilLwyYDf0rZAmRC5QGVSGFfOEs7rREYVkHWpm9yECarM2gF5A3R5gIiMWKtbUQ/Uxn7nwS1DQKAUr5vPsFqdOhkCCnxCWhwXh3RUNGkoGD0jY4S/iIaQUh7zN09OgVfYdGbtPsU="],
+  "nodes": {
+    "as1": {
+      "index": "0",
+      "shortname": "as1",
+      "longname": "as1",
+      "fqdn": "as1.sros-splab.io",
+      "group": "cisco",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as1",
+      "kind": "cisco_iol",
+      "image": "ghcr.io/autonetops/autonetops_labs/cisco_iol",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.1.1",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "cisco",
+        "clab-node-kind": "cisco_iol",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as1",
+        "clab-node-longname": "as1",
+        "clab-node-name": "as1",
+        "clab-node-type": "",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "as2": {
+      "index": "1",
+      "shortname": "as2",
+      "longname": "as2",
+      "fqdn": "as2.sros-splab.io",
+      "group": "cisco",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as2",
+      "kind": "cisco_iol",
+      "image": "ghcr.io/autonetops/autonetops_labs/cisco_iol",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.2.2",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "cisco",
+        "clab-node-kind": "cisco_iol",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as2",
+        "clab-node-longname": "as2",
+        "clab-node-name": "as2",
+        "clab-node-type": "",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "as3": {
+      "index": "2",
+      "shortname": "as3",
+      "longname": "as3",
+      "fqdn": "as3.sros-splab.io",
+      "group": "cisco",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as3",
+      "kind": "cisco_iol",
+      "image": "ghcr.io/autonetops/autonetops_labs/cisco_iol",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.3.3",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "cisco",
+        "clab-node-kind": "cisco_iol",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as3",
+        "clab-node-longname": "as3",
+        "clab-node-name": "as3",
+        "clab-node-type": "",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "as4": {
+      "index": "3",
+      "shortname": "as4",
+      "longname": "as4",
+      "fqdn": "as4.sros-splab.io",
+      "group": "cisco",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as4",
+      "kind": "cisco_iol",
+      "image": "ghcr.io/autonetops/autonetops_labs/cisco_iol",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.4.4",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "cisco",
+        "clab-node-kind": "cisco_iol",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/as4",
+        "clab-node-longname": "as4",
+        "clab-node-name": "as4",
+        "clab-node-type": "",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "client1": {
+      "index": "4",
+      "shortname": "client1",
+      "longname": "client1",
+      "fqdn": "client1.sros-splab.io",
+      "group": "vm",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/client1",
+      "kind": "linux",
+      "image": "ghcr.io/srl-labs/network-multitool",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.0.3",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "vm",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/client1",
+        "clab-node-longname": "client1",
+        "clab-node-name": "client1",
+        "clab-node-type": "",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 8080,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 80,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "client2": {
+      "index": "5",
+      "shortname": "client2",
+      "longname": "client2",
+      "fqdn": "client2.sros-splab.io",
+      "group": "vm",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/client2",
+      "kind": "linux",
+      "image": "ghcr.io/srl-labs/network-multitool",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.0.2",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "vm",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/client2",
+        "clab-node-longname": "client2",
+        "clab-node-name": "client2",
+        "clab-node-type": "",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 8080,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "p1": {
+      "index": "6",
+      "shortname": "p1",
+      "longname": "p1",
+      "fqdn": "p1.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p1",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.10.1",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:c3:06:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p1",
+        "clab-node-longname": "p1",
+        "clab-node-name": "p1",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "p2": {
+      "index": "7",
+      "shortname": "p2",
+      "longname": "p2",
+      "fqdn": "p2.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p2",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.10.2",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:68:07:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p2",
+        "clab-node-longname": "p2",
+        "clab-node-name": "p2",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "p3": {
+      "index": "8",
+      "shortname": "p3",
+      "longname": "p3",
+      "fqdn": "p3.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p3",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.10.3",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:42:08:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p3",
+        "clab-node-longname": "p3",
+        "clab-node-name": "p3",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "p4": {
+      "index": "9",
+      "shortname": "p4",
+      "longname": "p4",
+      "fqdn": "p4.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p4",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.10.4",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:ea:09:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/p4",
+        "clab-node-longname": "p4",
+        "clab-node-name": "p4",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe1": {
+      "index": "10",
+      "shortname": "pe1",
+      "longname": "pe1",
+      "fqdn": "pe1.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe1",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.11.1",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:ce:0a:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe1",
+        "clab-node-longname": "pe1",
+        "clab-node-name": "pe1",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe2": {
+      "index": "11",
+      "shortname": "pe2",
+      "longname": "pe2",
+      "fqdn": "pe2.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe2",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.11.2",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:d7:0b:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe2",
+        "clab-node-longname": "pe2",
+        "clab-node-name": "pe2",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe3": {
+      "index": "12",
+      "shortname": "pe3",
+      "longname": "pe3",
+      "fqdn": "pe3.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe3",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.11.3",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:6c:0c:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe3",
+        "clab-node-longname": "pe3",
+        "clab-node-name": "pe3",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe4": {
+      "index": "13",
+      "shortname": "pe4",
+      "longname": "pe4",
+      "fqdn": "pe4.sros-splab.io",
+      "group": "nokia_srsim",
+      "labdir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe4",
+      "kind": "nokia_srsim",
+      "image": "srsim:26.3.R2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.11.4",
+      "mgmt-ipv4-prefix-length": 16,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1c:0e:0d:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-bdc87b8a7774",
+        "clab-node-group": "nokia_srsim",
+        "clab-node-kind": "nokia_srsim",
+        "clab-node-lab-dir": "/home/alemos/Projects/nokia-splab/clab/clab-sros-splab/pe4",
+        "clab-node-longname": "pe4",
+        "clab-node-name": "pe4",
+        "clab-node-type": "sr-1",
+        "clab-owner": "alemos",
+        "clab-topo-file": "/home/alemos/Projects/nokia-splab/clab/lab.clab.yml",
+        "containerlab": "sros-splab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "p1",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:2a:02:29",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p2",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:d0:84:0e",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "p2",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:be:3c:e8",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p4",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:10:6e:be",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "p1",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:3b:27:b7",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p3",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:db:df:1e",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "p3",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:63:b4:68",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p4",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:17:0d:ac",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe1",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:27:75:1f",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p1",
+          "interface": "e1-1-c1-3",
+          "mac": "aa:c1:ab:a5:c9:58",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe2",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:fa:ee:b0",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p2",
+          "interface": "e1-1-c1-3",
+          "mac": "aa:c1:ab:88:43:23",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe3",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:33:f4:0f",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p3",
+          "interface": "e1-1-c1-3",
+          "mac": "aa:c1:ab:9a:e8:af",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe4",
+          "interface": "e1-1-c1-1",
+          "mac": "aa:c1:ab:54:c6:59",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p4",
+          "interface": "e1-1-c1-3",
+          "mac": "aa:c1:ab:0b:ec:66",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe1",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:80:69:7a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "as1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:fa:ba:81",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe2",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:63:a8:7d",
+          "peer": "z"
+        },
+        "z": {
+          "node": "as2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:dd:9c:71",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe3",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:82:1a:bc",
+          "peer": "z"
+        },
+        "z": {
+          "node": "as3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:4e:ca:35",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe4",
+          "interface": "e1-1-c1-2",
+          "mac": "aa:c1:ab:5c:fa:4b",
+          "peer": "z"
+        },
+        "z": {
+          "node": "as4",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:f9:8b:0f",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe3",
+          "interface": "e1-1-c1-3",
+          "mac": "aa:c1:ab:45:88:29",
+          "peer": "z"
+        },
+        "z": {
+          "node": "client1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:c0:c2:5e",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe4",
+          "interface": "e1-1-c1-3",
+          "mac": "aa:c1:ab:27:b2:1f",
+          "peer": "z"
+        },
+        "z": {
+          "node": "client2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:da:24:2e",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

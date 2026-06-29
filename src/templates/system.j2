@@ -1,0 +1,13 @@
+system:
+  name: {{ host.name }}
+  time:
+    ntp:     
+      admin-state: enable 
+{% if host.data.ntp.servers %}
+      server:
+{% for server in host.data.ntp.servers %}
+        - ip-address: "{{ server }}"
+          router-instance: "Base"
+{% endfor %}
+{% endif %}
+

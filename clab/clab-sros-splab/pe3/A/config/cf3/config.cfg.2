@@ -1,0 +1,410 @@
+# TiMOS-B-26.3.R2 both/x86_64 Nokia 7750 SR-1 Copyright (c) 2000-2026 Nokia.
+# All rights reserved. All use subject to applicable license agreements.
+# Built on Wed Apr 22 19:19:59 UTC 2026 by builder in /builds/263B/R2/panos
+# Configuration format version 26.3 revision 0
+
+# Generated 2026-06-29T12:30:17.2Z by system from Console
+# Commit ID 2
+#   Committed 2026-06-29T12:30:16.9Z by admin (gNMI) from 10.10.0.1
+
+configure {
+    card 1 {
+        admin-state enable
+        card-type iom-1
+        mda 1 {
+            admin-state enable
+            mda-type me6-100gb-qsfp28
+        }
+        mda 2 {
+            admin-state enable
+            mda-type me12-100gb-qsfp28
+        }
+    }
+    log {
+        filter "1001" {
+            named-entry "10" {
+                description "Collect only events of major severity or higher"
+                action forward
+                match {
+                    severity {
+                        gte major
+                    }
+                }
+            }
+        }
+        log-id "99" {
+            description "Default System Log"
+            source {
+                main true
+            }
+            destination {
+                memory {
+                    max-entries 500
+                }
+            }
+        }
+        log-id "100" {
+            description "Default Serious Errors Log"
+            filter "1001"
+            source {
+                main true
+            }
+            destination {
+                memory {
+                    max-entries 500
+                }
+            }
+        }
+    }
+    port 1/1/c1 {
+        admin-state enable
+        connector {
+            breakout c1-100g
+        }
+    }
+    system {
+        name "PE3"
+        grpc {
+            admin-state enable
+            allow-unsecure-connection
+            gnmi {
+                admin-state enable
+                auto-config-save true
+            }
+            gnoi {
+                cert-mgmt {
+                    admin-state enable
+                }
+                file {
+                    admin-state enable
+                }
+                system {
+                    admin-state enable
+                }
+            }
+            rib-api {
+                admin-state enable
+            }
+        }
+        management-interface {
+            netconf {
+                auto-config-save true
+                listen {
+                    admin-state enable
+                }
+            }
+            snmp {
+                packet-size 9216
+                streaming {
+                    admin-state enable
+                }
+            }
+        }
+        login-control {
+            login-banner true
+            pre-login-message {
+                message "................................................................\n:                  Welcome to Nokia SR OS!                     :\n:                                                              :\n:                                                              :\n: YANG:          https://yangbrowser.nokia.com/sros            :\n: Community:     https://containerlab.dev/community/           :\n: Discord:       https://containerlab.dev/discord/             :\n................................................................\n"
+            }
+        }
+        security {
+            aaa {
+                local-profiles {
+                    profile "administrative" {
+                        default-action permit-all
+                        entry 10 {
+                            match "configure system security"
+                            action permit
+                        }
+                        entry 20 {
+                            match "show system security"
+                            action permit
+                        }
+                        entry 30 {
+                            match "tools perform security"
+                            action permit
+                        }
+                        entry 40 {
+                            match "tools dump security"
+                            action permit
+                        }
+                        entry 42 {
+                            match "tools dump system security"
+                            action permit
+                        }
+                        entry 50 {
+                            match "admin system security"
+                            action permit
+                        }
+                        entry 100 {
+                            match "configure li"
+                            action deny
+                        }
+                        entry 110 {
+                            match "show li"
+                            action deny
+                        }
+                        entry 111 {
+                            match "clear li"
+                            action deny
+                        }
+                        entry 112 {
+                            match "tools dump li"
+                            action deny
+                        }
+                        grpc {
+                            rpc-authorization {
+                                gnmi-capabilities permit
+                                gnmi-get permit
+                                gnmi-set permit
+                                gnmi-subscribe permit
+                                gnoi-cert-mgmt-rotate permit
+                                gnoi-cert-mgmt-install permit
+                                gnoi-cert-mgmt-getcert permit
+                                gnoi-cert-mgmt-revoke permit
+                                gnoi-cert-mgmt-cangenerate permit
+                                gnoi-file-get permit
+                                gnoi-file-transfertoremote permit
+                                gnoi-file-put permit
+                                gnoi-file-stat permit
+                                gnoi-file-remove permit
+                                gnoi-system-ping permit
+                                gnoi-system-traceroute permit
+                                gnoi-system-time permit
+                                gnoi-system-setpackage permit
+                                gnoi-system-switchcontrolprocessor permit
+                                gnoi-system-reboot permit
+                                gnoi-system-rebootstatus permit
+                                gnoi-system-cancelreboot permit
+                                rib-api-getversion permit
+                                rib-api-modify permit
+                            }
+                        }
+                        netconf {
+                            base-op-authorization {
+                                action true
+                                cancel-commit true
+                                close-session true
+                                commit true
+                                copy-config true
+                                create-subscription true
+                                delete-config true
+                                discard-changes true
+                                edit-config true
+                                get true
+                                get-config true
+                                get-data true
+                                get-schema true
+                                kill-session true
+                                lock true
+                                validate true
+                            }
+                        }
+                    }
+                    profile "default" {
+                        entry 10 {
+                            match "exec"
+                            action permit
+                        }
+                        entry 20 {
+                            match "exit"
+                            action permit
+                        }
+                        entry 30 {
+                            match "help"
+                            action permit
+                        }
+                        entry 40 {
+                            match "logout"
+                            action permit
+                        }
+                        entry 50 {
+                            match "password"
+                            action permit
+                        }
+                        entry 60 {
+                            match "show config"
+                            action deny
+                        }
+                        entry 65 {
+                            match "show li"
+                            action deny
+                        }
+                        entry 66 {
+                            match "clear li"
+                            action deny
+                        }
+                        entry 67 {
+                            match "tools dump li"
+                            action deny
+                        }
+                        entry 68 {
+                            match "state li"
+                            action deny
+                        }
+                        entry 70 {
+                            match "show"
+                            action permit
+                        }
+                        entry 75 {
+                            match "state"
+                            action permit
+                        }
+                        entry 80 {
+                            match "enable-admin"
+                            action permit
+                        }
+                        entry 90 {
+                            match "enable"
+                            action permit
+                        }
+                        entry 100 {
+                            match "configure li"
+                            action deny
+                        }
+                    }
+                }
+            }
+            snmp {
+                community "76HzdddhlPpRo1Vql+ZB5spLqccgYQ== hash2" {
+                    access-permissions r
+                    version v2c
+                }
+            }
+            ssh {
+                server-cipher-list-v2 {
+                    cipher 190 {
+                        name aes256-ctr
+                    }
+                    cipher 192 {
+                        name aes192-ctr
+                    }
+                    cipher 194 {
+                        name aes128-ctr
+                    }
+                    cipher 200 {
+                        name aes128-cbc
+                    }
+                    cipher 205 {
+                        name 3des-cbc
+                    }
+                    cipher 225 {
+                        name aes192-cbc
+                    }
+                    cipher 230 {
+                        name aes256-cbc
+                    }
+                }
+                client-cipher-list-v2 {
+                    cipher 190 {
+                        name aes256-ctr
+                    }
+                    cipher 192 {
+                        name aes192-ctr
+                    }
+                    cipher 194 {
+                        name aes128-ctr
+                    }
+                    cipher 200 {
+                        name aes128-cbc
+                    }
+                    cipher 205 {
+                        name 3des-cbc
+                    }
+                    cipher 225 {
+                        name aes192-cbc
+                    }
+                    cipher 230 {
+                        name aes256-cbc
+                    }
+                }
+                server-mac-list-v2 {
+                    mac 200 {
+                        name hmac-sha2-512
+                    }
+                    mac 210 {
+                        name hmac-sha2-256
+                    }
+                    mac 215 {
+                        name hmac-sha1
+                    }
+                    mac 220 {
+                        name hmac-sha1-96
+                    }
+                    mac 225 {
+                        name hmac-md5
+                    }
+                    mac 240 {
+                        name hmac-md5-96
+                    }
+                }
+                client-mac-list-v2 {
+                    mac 200 {
+                        name hmac-sha2-512
+                    }
+                    mac 210 {
+                        name hmac-sha2-256
+                    }
+                    mac 215 {
+                        name hmac-sha1
+                    }
+                    mac 220 {
+                        name hmac-sha1-96
+                    }
+                    mac 225 {
+                        name hmac-md5
+                    }
+                    mac 240 {
+                        name hmac-md5-96
+                    }
+                }
+            }
+            user-params {
+                attempts {
+                    count 64
+                }
+                local-user {
+                    user "admin" {
+                        password "$2y$10$MTvJx86DXgtq8x41ZM0Tc.m1qzoF0d.3d0UH5Ya5suDPQN/8KM7rO"
+                        restricted-to-home false
+                        access {
+                            console true
+                            netconf true
+                            grpc true
+                        }
+                        console {
+                            member ["administrative"]
+                        }
+                        public-keys {
+                            rsa {
+                                rsa-key 31 {
+                                    key-value "AAAAB3NzaC1yc2EAAAADAQABAAABgQC6jCsLMZWmSVOPGyJw67be2ICjYQye8TNoYsNto2PpxT8HzAhg1ocJ29c9qcp8opW51bBOlADh+Wi5Cuej229LsySERLRNxMjbjG2+97U8eASIC8OeU0MCda9/hTBxXrxANimh1gDTmt4v99rbfRC1rhhw+JLHc4uZfFb7hDg3by2ShIBGcI4YxjteoaCC2ZDc0wcsh3EUt96/7OT3OdkJikVy9kviXSms/FCMYXy7ztQ9LnJ0WVthwRSlE6cgdKNPuPZojGCoQi7k0rZuZYYjXuq4EkCHT+RboSs12A6aeoOTkC07yW80/nb8639TcyNkHGHc3dPEaZIzBiHT3j86ijmky614zQYbIWeTRbPVM+BRV7XaF/5JS8WOilLwyYDf0rZAmRC5QGVSGFfOEs7rREYVkHWpm9yECarM2gF5A3R5gIiMWKtbUQ/Uxn7nwS1DQKAUr5vPsFqdOhkCCnxCWhwXh3RUNGkoGD0jY4S/iIaQUh7zN09OgVfYdGbtPsU="
+                                }
+                                rsa-key 32 {
+                                    key-value "AAAAB3NzaC1yc2EAAAADAQABAAACAQDjM5YdYiN7QcJAoOwtVh8QIPCHaXqpMRAlQpnGD3/u/s5miiDztghtFvhDmBrxxTmyrow3Uz7taPedXsMVn95Lm7yNMFAlm30B3sgsrAGVrsGjQ5ldeGihOJRn9Oroy8bdjBaNrHvDY7waFqCYZTnqNBgSpQHYUEkPL2Er/ypgvKJE4J5zKd/76MdTkTOoz1IbQJKVF7yRILTPQnwLI93qS13jU3sBrBW7NLGv9U8QmMIR3GYkjvCdDsAOAqJQVWhxk+sbL4aG4APUfj5qrZmVJmQ69hfTm/Hq4x2r4VuZK9vAfvj8k5C/KhtQEm1KZHcKwcr7rdRXb+QdO9XBs3bohbC3pmZsQUP0OYf6G8fNcqTwRU3eKj/gcYhc7ABOhLwgnbqqvxbChWZqIv5C66G3z8jSEdvMIb9+Z6lUhqe5cgLiTEj5GmGjK2mF0m516mQiGwf2t/BTy9TnJc9OzvI/hHZ3O0Ya845NkFbTt/Ah1Bs9pEe6UWf7UN85uQn28M6v0Jk06jBUuv9TQBKv09G1ox40mCB1wItyd0UJvO5dNogC1wuujZqwwCThcjKquqtoRGGf+w6/gWhmWEtba7ClchfZiobkCm88EkqVx5gJyeURzUH6YcUVud3s29qSuFLEiCPqkP/sOTYxHSH7o1p0+gFI2xaMWGHrxTGbN4Fgpw=="
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        time {
+            ntp {
+                server 200.160.0.8 router-instance "Base" {
+                }
+                server 200.189.40.8 router-instance "Base" {
+                }
+                server 2001:12f8:9:1::8 router-instance "Base" {
+                }
+                server 2001:12f8:b:1::8 router-instance "Base" {
+                }
+            }
+        }
+    }
+}
+
+persistent-indices {
+    description "Persistent indices are maintained by the system and must not be modified."
+}
+
+# Finished 2026-06-29T12:30:17.2Z

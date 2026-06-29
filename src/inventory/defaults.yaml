@@ -1,0 +1,11 @@
+connection_options:
+  pygnmi:
+    port: 57400
+    timeout: 10
+    extras:      
+      insecure: true
+      skip_verify: true
+      use_tls: false
+
+username: admin
+password: NokiaSros1!
