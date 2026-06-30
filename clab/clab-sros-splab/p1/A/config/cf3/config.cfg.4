@@ -3,10 +3,9 @@
 # Built on Wed Apr 22 19:19:59 UTC 2026 by builder in /builds/263B/R2/panos
 # Configuration format version 26.3 revision 0
 
-# Generated 2026-06-29T11:19:57.8Z by admin from 10.10.0.1
-# Commit ID 1
-#   Committed 2026-06-29T11:19:56.5Z by system (MD-CLI) from Console
-#   Log       "System booted version B-26.3.R2."
+# Generated 2026-06-29T12:38:43.4Z by system from Console
+# Commit ID 3
+#   Committed 2026-06-29T12:38:43.2Z by admin (MD-CLI) from 10.10.0.1
 
 configure {
     card 1 {
@@ -57,8 +56,14 @@ configure {
             }
         }
     }
+    port 1/1/c1 {
+        admin-state enable
+        connector {
+            breakout c1-100g
+        }
+    }
     system {
-        name "p1"
+        name "P1"
         grpc {
             admin-state enable
             allow-unsecure-connection
@@ -383,6 +388,19 @@ configure {
                 }
             }
         }
+        time {
+            ntp {
+                admin-state enable
+                server 200.160.0.8 router-instance "Base" {
+                }
+                server 200.189.40.8 router-instance "Base" {
+                }
+                server 2001:12f8:9:1::8 router-instance "Base" {
+                }
+                server 2001:12f8:b:1::8 router-instance "Base" {
+                }
+            }
+        }
     }
 }
 
@@ -390,4 +408,4 @@ persistent-indices {
     description "Persistent indices are maintained by the system and must not be modified."
 }
 
-# Finished 2026-06-29T11:19:57.8Z
+# Finished 2026-06-29T12:38:43.5Z

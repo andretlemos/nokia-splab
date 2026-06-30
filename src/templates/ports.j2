@@ -2,4 +2,11 @@ port:
   - port-id: "1/1/c1"
     admin-state: enable
     connector:
-      breakout: c1-100g
+      breakout: c4-10g
+
+{% for interface in host.data.iface_list  %}
+{% if interface.name != "Management0" and interface.name != "Loopback0" %}
+  - port-id: {{ interface.name }}
+    admin-state: enable     
+{% endif %}
+{% endfor %}

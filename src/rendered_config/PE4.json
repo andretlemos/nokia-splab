@@ -14,15 +14,6 @@
         ]
       }
     ],
-    "port": [
-      {
-        "port-id": "1/1/c1",
-        "admin-state": "enable",
-        "connector": {
-          "breakout": "c1-100g"
-        }
-      }
-    ],
     "system": {
       "name": "PE4",
       "time": {
@@ -48,6 +39,109 @@
           ]
         }
       }
-    }
+    },
+    "port": [
+      {
+        "port-id": "1/1/c1",
+        "admin-state": "enable",
+        "connector": {
+          "breakout": "c4-10g"
+        }
+      },
+      {
+        "port-id": "1/1/c1/1",
+        "admin-state": "enable"
+      },
+      {
+        "port-id": "1/1/c1/2",
+        "admin-state": "enable"
+      },
+      {
+        "port-id": "1/1/c1/3",
+        "admin-state": "enable"
+      },
+      {
+        "port-id": "1/1/c1/4",
+        "admin-state": "enable"
+      }
+    ],
+    "router": [
+      {
+        "router-name": "Base",
+        "interface": [
+          {
+            "interface-name": "TO_P4",
+            "port": "1/1/c1/1",
+            "ipv4": {
+              "primary": {
+                "address": "10.0.1.7",
+                "prefix-length": 31
+              }
+            },
+            "ipv6": {
+              "address": [
+                {
+                  "ipv6-address": "2001:db8:0:1::7",
+                  "prefix-length": 127
+                }
+              ]
+            }
+          },
+          {
+            "interface-name": "TO_AS65400",
+            "port": "1/1/c1/2",
+            "ipv4": {
+              "primary": {
+                "address": "192.168.4.0",
+                "prefix-length": 31
+              }
+            },
+            "ipv6": {
+              "address": [
+                {
+                  "ipv6-address": "2001:db8:10:4::",
+                  "prefix-length": 127
+                }
+              ]
+            }
+          },
+          {
+            "interface-name": "TO_CLIENT_2",
+            "port": "1/1/c1/3",
+            "ipv4": {
+              "primary": {
+                "address": "172.21.20.1",
+                "prefix-length": 24
+              }
+            },
+            "ipv6": {
+              "address": [
+                {
+                  "ipv6-address": "2001:db8:100:20::1",
+                  "prefix-length": 64
+                }
+              ]
+            }
+          },
+          {
+            "interface-name": "system",
+            "ipv4": {
+              "primary": {
+                "address": "192.168.101.4",
+                "prefix-length": 32
+              }
+            },
+            "ipv6": {
+              "address": [
+                {
+                  "ipv6-address": "2001:db8:cafe:1::4",
+                  "prefix-length": 128
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
   }
 }

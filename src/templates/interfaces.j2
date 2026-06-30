@@ -1,0 +1,35 @@
+router:
+  - router-name: Base
+    interface:
+{% for interface in host.data.iface_list %}
+{% if interface.name == "Loopback0" %}
+      - interface-name: system
+{% if interface.ipv4 %}
+        ipv4:
+          primary:
+            address: "{{ interface.ipv4 }}"
+            prefix-length: {{ interface.ipv4_prefix }}
+{% endif %}
+{% if interface.ipv6 %}
+        ipv6:
+          address:
+            - ipv6-address: "{{ interface.ipv6 }}"
+              prefix-length: {{ interface.ipv6_prefix }}
+{% endif %}
+{% elif interface.description and interface.name != "Management0" %}
+      - interface-name: "{{ interface.description }}"
+        port: "{{ interface.name }}"
+{% if interface.ipv4 %}
+        ipv4:
+          primary:
+            address: "{{ interface.ipv4 }}"
+            prefix-length: {{ interface.ipv4_prefix }}
+{% endif %}
+{% if interface.ipv6 %}
+        ipv6:
+          address:
+            - ipv6-address: "{{ interface.ipv6 }}"
+              prefix-length: {{ interface.ipv6_prefix }}
+{% endif %}
+{% endif %}
+{% endfor %}

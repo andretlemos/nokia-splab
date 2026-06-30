@@ -55,6 +55,7 @@ Typical workflow:
 2. Deploy the lab with containerlab using the topology file in [clab/lab.clab.yml](clab/lab.clab.yml)
 3. Use the automation code under [src](src) to generate or deploy configurations
 4. Extend the templates and inventory as needed for new scenarios
+5. Run with python -m src.nornir_tasks.deploy_config
 
 ## Notes
 
