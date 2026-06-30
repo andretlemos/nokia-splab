@@ -1,5 +1,3 @@
-import os
-from dotenv import load_dotenv
 from src.modules.init_nornir import nr
 from src.modules.load_netbox import nb
 from nornir.core.task import Task, Result
@@ -7,11 +5,13 @@ from nornir_jinja2.plugins.tasks import template_file
 from nornir_rich.functions import print_result
 from nornir_rich.progress_bar import RichProgressBar
 from nornir_pygnmi.tasks import gnmi_set
+from ipaddress import ip_interface
+
 import json
 import yaml
-import logging
 
-def get_ct_from_netbox(task: Task) -> Result:
+
+def get_config_context_from_netbox(task: Task) -> Result:
     """
     Retrieves the current configuration context from NetBox and updates the task's host data.
 
@@ -42,28 +42,38 @@ def get_interfaces_from_netbox(task: Task) -> Result:
 
     for iface in interfaces:
         ips = list(nb.ipam.ip_addresses.filter(interface_id=iface.id))
-        if not ips:
-            continue
-        ip_address = ips[0].address
+       
+        ipv4_address = None
+        ipv4_prefix = None
+        ipv6_address = None
+        ipv6_prefix = None
 
-        iface_list.append({
-            "name": iface.name,
-            "description": iface.description,
-            "ip": ip_address,
-            "enabled": iface.enabled,
-            "tags": [tag.name for tag in iface.tags]
-        })
+        for ip in ips:
+            ip_obj = ip_interface(ip.address)
 
-        if iface.name.lower().startswith("loopback0"):
-            lo0_ip = ip_address.split("/")[0]
-            lo0_description = iface.description
+            if ip_obj.version == 4:
+                ipv4_address = str(ip_obj.ip)
+                ipv4_prefix = ip_obj.network.prefixlen
+
+            elif ip_obj.version == 6:
+                ipv6_address = str(ip_obj.ip)
+                ipv6_prefix = ip_obj.network.prefixlen
+        
+        iface_list.append(
+            {
+                "name": iface.name,
+                "description": iface.description or "",
+                "ipv4": ipv4_address,
+                "ipv4_prefix": ipv4_prefix,
+                "ipv6": ipv6_address,
+                "ipv6_prefix": ipv6_prefix,
+                "enabled": iface.enabled,
+                "tags": [tag.name for tag in iface.tags],
+            }
+        )
 
 
-    task.host.data.update({
-        "interfaces": iface_list,
-        "lo0_ip": lo0_ip,
-        "lo0_description": lo0_description
-        })
+       
     return Result(host=task.host, result=f"Got interfaces data for {task.host.name}: {iface_list}")
 
 
@@ -173,16 +183,16 @@ def main(nr = nr):
     """
     
     nr = nr.with_processors([RichProgressBar()])
-    results = nr.run(task=get_ct_from_netbox)
+    #results = nr.run(task=get_config_context_from_netbox)
     #print_result(results)
     results = nr.run(task=get_interfaces_from_netbox)
     #print_result(results)
-    results = nr.run(task=get_ebgp_from_netbox)
+    #results = nr.run(task=get_ebgp_from_netbox)
     #print_result(results)
-    results = nr.run(task=render_template_json)
-    #print_result(results)
-    results = nr.run(task=push_config_gnmi)
+    #results = nr.run(task=render_template_json)
     print_result(results)
+    #results = nr.run(task=push_config_gnmi)
+    #print_result(results)
 
 if __name__ == "__main__":
     main()

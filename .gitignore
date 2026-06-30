@@ -9,6 +9,8 @@ wheels/
 # Virtual environments
 .venv
 
+#containerlab
+clab/clab-sros-splab/*
 #license
 clab/SR_SIM_license.txt
 
