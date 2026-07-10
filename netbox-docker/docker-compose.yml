@@ -1,6 +1,7 @@
+
 services:
   netbox: &netbox
-    image: docker.io/netboxcommunity/netbox:${VERSION-v4.5-4.0.1}
+    image: docker.io/netboxcommunity/netbox:latest
     depends_on:
       - postgres
       - redis
@@ -13,7 +14,7 @@ services:
       timeout: 3s
       interval: 15s
     volumes:
-      - ./configuration:/etc/netbox/config:z,ro      
+      - ./configuration:/etc/netbox/config:z,ro
       - netbox-media-files:/opt/netbox/netbox/media:rw
       - netbox-reports-files:/opt/netbox/netbox/reports:rw
       - netbox-scripts-files:/opt/netbox/netbox/scripts:rw
@@ -85,3 +86,4 @@ volumes:
     driver: local
   netbox-scripts-files:
     driver: local
+

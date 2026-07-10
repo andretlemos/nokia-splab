@@ -1,13 +1,11 @@
-# Dockerfile-Plugins
-ARG NETBOX_IMAGE=netboxcommunity/netbox:v4.5-4.0.1
-FROM ${NETBOX_IMAGE}
+FROM netboxcommunity/netbox:latest
 
-# Copie a lista de plugins (PyPI names)
 COPY ./plugin_requirements.txt /opt/netbox/
-
-# Garanta que o venv esteja no PATH (geralmente já está, mas não custa)
-ENV VIRTUAL_ENV=/opt/netbox/venv
-ENV PATH="/opt/netbox/venv/bin:${PATH}"
-
-# Instale os plugins com UV (em vez de pip)
 RUN /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt
+
+# These lines are only required if your plugin has its own static files.
+COPY configuration/configuration.py /etc/netbox/config/configuration.py
+COPY configuration/plugins.py /etc/netbox/config/plugins.py
+RUN DEBUG="true" SECRET_KEY="dummydummydummydummydummydummydummydummydummydummy" \
+    /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input
+

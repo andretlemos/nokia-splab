@@ -8,5 +8,24 @@ port:
 {% if interface.name != "Management0" and interface.name != "Loopback0" %}
   - port-id: {{ interface.name }}
     admin-state: enable     
+    ethernet:
+      mode: network      
+      mtu: 9192      
+      lldp:
+        dest-mac:
+          - mac-type: nearest-bridge
+            notification: true
+            receive: true
+            transmit: true
+            tx-tlvs:
+              port-desc: true
+              sys-name: true
+              sys-desc: true
+              sys-cap: true
+            tx-mgmt-address:
+              - mgmt-address-system-type: system-ipv6
+                admin-state: enable
+
+
 {% endif %}
 {% endfor %}
