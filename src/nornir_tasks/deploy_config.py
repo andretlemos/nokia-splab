@@ -183,14 +183,10 @@ def main(nr = nr):
     """
     
     nr = nr.with_processors([RichProgressBar()])
-    results = nr.run(task=get_config_context_from_netbox)
-    #print_result(results)
-    results = nr.run(task=get_interfaces_from_netbox)
-    #print_result(results)
-    #results = nr.run(task=get_ebgp_from_netbox)
-    #print_result(results)
-    results = nr.run(task=render_template_json)
-    #print_result(results)
+    results = nr.run(task=get_config_context_from_netbox)    
+    results = nr.run(task=get_interfaces_from_netbox)   
+    #results = nr.run(task=get_ebgp_from_netbox)    
+    results = nr.run(task=render_template_json)    
     results = nr.run(task=push_config_gnmi)
     print_result(results)
 

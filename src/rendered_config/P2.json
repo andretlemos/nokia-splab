@@ -304,7 +304,72 @@
               }
             ]
           }
-        ]
+        ],
+        "ldp": {
+          "admin-state": "enable",
+          "ldp-shortcut": {
+            "ipv4": true,
+            "ipv6": true
+          },
+          "interface-parameters": {
+            "interface": [
+              {
+                "ip-int-name": "TO_P1",
+                "admin-state": "enable",
+                "ipv4": {
+                  "admin-state": "enable",
+                  "fec-type-capability": {
+                    "p2mp-ipv6": false,
+                    "prefix-ipv6": false
+                  }
+                },
+                "ipv6": {
+                  "admin-state": "enable",
+                  "fec-type-capability": {
+                    "p2mp-ipv4": false,
+                    "prefix-ipv4": false
+                  }
+                }
+              },
+              {
+                "ip-int-name": "TO_P4",
+                "admin-state": "enable",
+                "ipv4": {
+                  "admin-state": "enable",
+                  "fec-type-capability": {
+                    "p2mp-ipv6": false,
+                    "prefix-ipv6": false
+                  }
+                },
+                "ipv6": {
+                  "admin-state": "enable",
+                  "fec-type-capability": {
+                    "p2mp-ipv4": false,
+                    "prefix-ipv4": false
+                  }
+                }
+              },
+              {
+                "ip-int-name": "TO_PE2",
+                "admin-state": "enable",
+                "ipv4": {
+                  "admin-state": "enable",
+                  "fec-type-capability": {
+                    "p2mp-ipv6": false,
+                    "prefix-ipv6": false
+                  }
+                },
+                "ipv6": {
+                  "admin-state": "enable",
+                  "fec-type-capability": {
+                    "p2mp-ipv4": false,
+                    "prefix-ipv4": false
+                  }
+                }
+              }
+            ]
+          }
+        }
       }
     ]
   }

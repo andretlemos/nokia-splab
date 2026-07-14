@@ -1,0 +1,23 @@
+    ldp:
+      admin-state: enable    
+      ldp-shortcut:
+        ipv4: true
+        ipv6: true    
+      interface-parameters:
+        interface:
+{% for interface in host.data.iface_list %}
+{% if interface.name != "Management0" and interface.name != "Loopback0" and "ISIS" in interface.tags %}
+          - ip-int-name: "{{ interface.description }}"
+            admin-state: enable    
+            ipv4:
+              admin-state: enable
+              fec-type-capability:
+                p2mp-ipv6: false
+                prefix-ipv6: false    
+            ipv6:
+              admin-state: enable
+              fec-type-capability:
+                p2mp-ipv4: false
+                prefix-ipv4: false
+{% endif %}
+{% endfor %}
