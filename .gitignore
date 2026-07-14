@@ -13,6 +13,6 @@ wheels/
 
 #license
 clab/SR_SIM_license.txt
-clab/clab-sros-splab*
+clab/clab-sros-splab/*
 #Nornir
 nornir.log
