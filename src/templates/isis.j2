@@ -1,0 +1,39 @@
+
+    isis:
+      - isis-instance: 0
+        admin-state: enable
+        ipv4-routing: true
+        ipv6-routing: mt
+        level-capability: "2"
+        prefix-attributes-tlv: true
+        reference-bandwidth: "1000000000"
+        standard-multi-instance: true
+        system-id: {{ host.data.isis["system_id"] }}
+        area-address:
+          - "49.0000"       
+        overload-on-boot:
+          timeout: 180
+        timers:
+          spf-wait:
+            spf-max-wait: 1000
+            spf-initial-wait: 50
+            spf-second-wait: 100
+          lsp-wait:
+            lsp-max-wait: 1000    
+            lsp-second-wait: 200
+        traffic-engineering-options:
+          ipv6: true
+        interface:
+{% for interface in host.data.iface_list %}
+{% if interface.name == "Loopback0" %}
+          - interface-name: "system"
+            passive: true
+{% elif interface.name != "Management0" and "ISIS" in interface.tags %}
+          - interface-name: "{{ interface.description }}"
+            admin-state: enable
+            interface-type: point-to-point
+{% endif %}
+{% endfor %}
+        level:
+          - level-number: "2"
+            wide-metrics-only: true
