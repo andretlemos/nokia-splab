@@ -9,6 +9,7 @@ from ipaddress import ip_interface
 
 import json
 import yaml
+import argparse
 
 
 def get_config_context_from_netbox(task: Task) -> Result:
@@ -143,7 +144,7 @@ def render_template_json(task: Task) -> Result:
     
     return Result(host=task.host, result=f"Rendered config written to {filename}")
 
-def push_config_gnmi(task: Task) -> Result:
+def push_config_gnmi(task: Task, dry_run: bool = False) -> Result:
     """
     Pushes the rendered configuration for a given device to the device using gNMI.
 
@@ -154,41 +155,93 @@ def push_config_gnmi(task: Task) -> Result:
         Result: A result object containing the updated host data and the result of the gNMI set operation.
     """    
     filename = f"src/rendered_config/{task.host.name}.json"
-    with open(filename, "r") as f:
+
+    with open(filename) as f:
         rendered = json.load(f)
-        
-    r = task.run (
-        task = gnmi_set,
+
+    if dry_run:
+        return Result(
+            host=task.host,
+            changed=False,
+            result=json.dumps(rendered, indent=2)
+        )
+
+    r = task.run(
+        task=gnmi_set,
         encoding="json_ietf",
         update=[("", rendered)],
-        #severity_level= logging.DEBUG,
     )
-    
-    return Result(host=task.host, result=r.result)
+
+    return Result(
+        host=task.host,
+        result=r.result
+    )
 
 
-def main(nr = nr):
-    """
-    Main execution entry point for the Nornir automation script.
+def main(nr=nr):
 
-    Initializes Nornir with a progress bar and executes a series of tasks:
-    1. Fetch config context from NetBox.
-    2. Fetch interface data from NetBox.
-    3. Fetch eBGP session data from NetBox.
-    4. Render configuration templates.
-    5. Push configuration via gNMI.
+    parser = argparse.ArgumentParser()
 
-    Args:
-        nr (InitNornir): The initialized Nornir object. Defaults to the global `nr` object.
-    """
-    
-    nr = nr.with_processors([RichProgressBar()])
-    results = nr.run(task=get_config_context_from_netbox)    
-    results = nr.run(task=get_interfaces_from_netbox)   
-    #results = nr.run(task=get_ebgp_from_netbox)    
-    results = nr.run(task=render_template_json)    
-    results = nr.run(task=push_config_gnmi)
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Render configuration and show payload without pushing"
+    )
+
+    parser.add_argument(
+        "--devices",
+        nargs="+",
+        help="Specific devices to process"
+    )
+
+    parser.add_argument(
+        "--skip-push",
+        action="store_true",
+        help="Render configuration only"
+    )
+
+    args = parser.parse_args()
+    nornir_obj = nr
+
+    #
+    # Inventory filtering
+    #
+    if args.devices:
+        nornir_obj = nornir_obj.filter(
+            filter_func=lambda h: h.name in args.devices
+        )
+
+    nornir_obj = nornir_obj.with_processors([RichProgressBar()])
+
+    #
+    # NetBox data collection
+    #
+    nornir_obj.run(task=get_config_context_from_netbox)
+    nornir_obj.run(task=get_interfaces_from_netbox)
+    # nornir_obj.run(task=get_ebgp_from_netbox)
+
+    #
+    # Render JSON
+    #
+    results = nornir_obj.run(
+        task=render_template_json
+    )
     print_result(results)
 
+    #
+    # Render only
+    #
+    if args.skip_push:
+        print("\nPush skipped.\n")
+        return
+
+    #
+    # Push / Dry-run
+    #
+    results = nornir_obj.run(
+        task=push_config_gnmi,
+        dry_run=args.dry_run
+    )
+    print_result(results)
 if __name__ == "__main__":
     main()
