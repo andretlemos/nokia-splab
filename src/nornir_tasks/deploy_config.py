@@ -191,13 +191,13 @@ def main(nr=nr):
     parser.add_argument(
         "--devices",
         nargs="+",
-        help="Specific devices to process"
+        help="Choose devices to filter"
     )
 
     parser.add_argument(
         "--skip-push",
         action="store_true",
-        help="Render configuration only"
+        help="Render the yaml configuration only"
     )
 
     args = parser.parse_args()
