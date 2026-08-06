@@ -2,7 +2,7 @@ router:
   - router-name: Base
     interface:
 {% for interface in host.data.iface_list %}
-{% if interface.name == "Loopback0" %}
+{% if interface.name == "system" %}
       - interface-name: system
 {% if interface.ipv4 %}
         ipv4:

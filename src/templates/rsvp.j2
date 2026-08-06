@@ -1,0 +1,12 @@
+    rsvp:
+      admin-state: enable
+      include-node-id-in-rro: true
+      interface:
+       - interface-name: system
+{% for interface in host.data.iface_list%}
+{% if "MPLS" in interface.tags  %}              
+       - interface-name: {{ interface.description }}
+{% endif %}
+{% endfor %}
+
+

@@ -6,7 +6,7 @@
       interface-parameters:
         interface:
 {% for interface in host.data.iface_list %}
-{% if interface.name != "Management0" and interface.name != "Loopback0" and "ISIS" in interface.tags %}
+{% if interface.name != "Management0" and interface.name != "system" and "ISIS" in interface.tags %}
           - ip-int-name: "{{ interface.description }}"
             admin-state: enable    
             ipv4:

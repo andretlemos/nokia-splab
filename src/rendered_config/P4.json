@@ -369,6 +369,41 @@
               }
             ]
           }
+        },
+        "mpls": {
+          "admin-state": "enable",
+          "interface": [
+            {
+              "interface-name": "system"
+            },
+            {
+              "interface-name": "TO_P2"
+            },
+            {
+              "interface-name": "TO_P3"
+            },
+            {
+              "interface-name": "TO_PE4"
+            }
+          ]
+        },
+        "rsvp": {
+          "admin-state": "enable",
+          "include-node-id-in-rro": true,
+          "interface": [
+            {
+              "interface-name": "system"
+            },
+            {
+              "interface-name": "TO_P2"
+            },
+            {
+              "interface-name": "TO_P3"
+            },
+            {
+              "interface-name": "TO_PE4"
+            }
+          ]
         }
       }
     ]

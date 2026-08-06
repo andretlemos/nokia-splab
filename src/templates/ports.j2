@@ -5,7 +5,7 @@ port:
       breakout: c4-10g
 
 {% for interface in host.data.iface_list  %}
-{% if interface.name != "Management0" and interface.name != "Loopback0" %}
+{% if interface.name != "Management0" and interface.name != "system" %}
   - port-id: {{ interface.name }}
     admin-state: enable     
     ethernet:

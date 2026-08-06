@@ -8,7 +8,7 @@
         prefix-attributes-tlv: true
         reference-bandwidth: "1000000000"
         standard-multi-instance: true
-        system-id: {{ host.data.isis["system_id"] }}
+        system-id: {{ host.data.isis["system-id"] }}
         area-address:
           - "49.0000"       
         overload-on-boot:
@@ -25,7 +25,7 @@
           ipv6: true
         interface:
 {% for interface in host.data.iface_list %}
-{% if interface.name == "Loopback0" %}
+{% if interface.name == "system" %}
           - interface-name: "system"
             passive: true
 {% elif interface.name != "Management0" and "ISIS" in interface.tags %}

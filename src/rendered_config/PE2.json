@@ -305,6 +305,29 @@
               }
             ]
           }
+        },
+        "mpls": {
+          "admin-state": "enable",
+          "interface": [
+            {
+              "interface-name": "system"
+            },
+            {
+              "interface-name": "TO_P2"
+            }
+          ]
+        },
+        "rsvp": {
+          "admin-state": "enable",
+          "include-node-id-in-rro": true,
+          "interface": [
+            {
+              "interface-name": "system"
+            },
+            {
+              "interface-name": "TO_P2"
+            }
+          ]
         }
       }
     ]

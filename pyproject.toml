@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ansible>=13.7.0",
+    "argparse>=1.4.0",
     "dotenv>=0.9.9",
     "nornir>=3.5.0",
     "nornir-jinja2>=0.2.0",
