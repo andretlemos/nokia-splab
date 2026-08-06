@@ -172,6 +172,8 @@
     "router": [
       {
         "router-name": "Base",
+        "autonomous-system": 65000,
+        "router-id": "192.168.100.3",
         "mpls-labels": {
           "sr-labels": {
             "start": 20000,
@@ -436,6 +438,34 @@
               "interface-name": "TO_PE3"
             }
           ]
+        },
+        "bgp": {
+          "admin-state": "enable",
+          "ibgp-multipath": true,
+          "group": [
+            {
+              "group-name": "IBGPv4",
+              "admin-state": "enable",
+              "path-mtu-discovery": true,
+              "type": "internal",
+              "peer-as": 65500
+            },
+            {
+              "group-name": "IBGPv6",
+              "admin-state": "enable",
+              "path-mtu-discovery": true,
+              "type": "internal",
+              "peer-as": 65500
+            }
+          ],
+          "neighbor": {
+            "ip-address": "2001:db8:cafe:1::4",
+            "description": "IBGPv6 neighbor",
+            "group": "IBGPv6",
+            "family": {
+              "ipv6": true
+            }
+          }
         }
       }
     ]

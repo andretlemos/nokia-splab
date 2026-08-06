@@ -16,3 +16,5 @@ clab/SR_SIM_license.txt
 clab/clab-sros-splab/*
 #Nornir
 nornir.log
+clab/clab-sros-splab/.tls/ca/ca.key
+clab/clab-sros-splab/.tls/ca/ca.pem

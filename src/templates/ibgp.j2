@@ -1,0 +1,35 @@
+    bgp:
+      admin-state: enable
+      ibgp-multipath: true
+      group:
+        - group-name: IBGPv4
+          admin-state: enable
+          path-mtu-discovery: true
+          type: internal
+          peer-as: 65500
+  
+        - group-name: IBGPv6
+          admin-state: enable
+          path-mtu-discovery: true
+          type: internal
+          peer-as: 65500
+{% for neighbor in host.data.ibgp.ipv4 %}
+{% if neighbor !=  host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv4") | first   %}
+      neighbor:
+       ip-address: {{ neighbor }}
+       description: "IBGPv4 neighbor"
+       group: "IBGPv4"
+       family:
+         ipv4: true
+{% endif %}
+{% endfor %}
+{% for neighbor in host.data.ibgp.ipv6 %}
+{% if neighbor !=  host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv6") | first   %}
+      neighbor:
+        ip-address: {{ neighbor }}
+        description: "IBGPv6 neighbor"
+        group: "IBGPv6"
+        family:
+          ipv6: true
+{% endif%}
+{% endfor %}

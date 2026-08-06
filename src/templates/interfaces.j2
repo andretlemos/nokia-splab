@@ -1,10 +1,14 @@
 router:
   - router-name: Base
+{# BGP Configuration #}
+    autonomous-system: 65000
+    router-id: {{ host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv4") | first  }}
 {# Segment Routing Config #}
     mpls-labels:
       sr-labels:
         start: 20000
         end: 22000
+       
     interface:
 {% for interface in host.data.iface_list %}
 {% if interface.name == "system" %}

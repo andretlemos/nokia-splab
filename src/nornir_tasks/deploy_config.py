@@ -218,7 +218,7 @@ def main(nr=nr):
     #
     nornir_obj.run(task=get_config_context_from_netbox)
     nornir_obj.run(task=get_interfaces_from_netbox)
-    # nornir_obj.run(task=get_ebgp_from_netbox)
+    nornir_obj.run(task=get_ebgp_from_netbox)
 
     #
     # Render JSON
