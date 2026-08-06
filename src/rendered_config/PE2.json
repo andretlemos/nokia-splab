@@ -172,6 +172,12 @@
     "router": [
       {
         "router-name": "Base",
+        "mpls-labels": {
+          "sr-labels": {
+            "start": 20000,
+            "end": 22000
+          }
+        },
         "interface": [
           {
             "interface-name": "TO_P2",
@@ -256,7 +262,8 @@
               }
             },
             "traffic-engineering-options": {
-              "ipv6": true
+              "ipv6": true,
+              "advertise-delay": true
             },
             "interface": [
               {
@@ -266,7 +273,13 @@
               },
               {
                 "interface-name": "system",
-                "passive": true
+                "passive": true,
+                "ipv4-node-sid": {
+                  "label": "20202"
+                },
+                "ipv6-node-sid": {
+                  "label": "20302"
+                }
               }
             ],
             "level": [
@@ -274,7 +287,26 @@
                 "level-number": "2",
                 "wide-metrics-only": true
               }
-            ]
+            ],
+            "advertise-router-capability": "area",
+            "traffic-engineering": true,
+            "loopfree-alternate": {
+              "ti-lfa": {
+                "node-protect": {}
+              }
+            },
+            "segment-routing": {
+              "admin-state": "enable",
+              "tunnel-table-pref": 8,
+              "multi-topology": {
+                "mt2": true
+              },
+              "prefix-sid-range": {
+                "global": [
+                  null
+                ]
+              }
+            }
           }
         ],
         "ldp": {

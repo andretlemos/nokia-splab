@@ -1,9 +1,14 @@
 router:
   - router-name: Base
+{# Segment Routing Config #}
+    mpls-labels:
+      sr-labels:
+        start: 20000
+        end: 22000
     interface:
 {% for interface in host.data.iface_list %}
 {% if interface.name == "system" %}
-      - interface-name: system
+      - interface-name: system        
 {% if interface.ipv4 %}
         ipv4:
           primary:
