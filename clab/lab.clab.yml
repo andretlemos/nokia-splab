@@ -47,7 +47,7 @@ topology:
       kind: linux
       group: vm
       exec:
-        - ip address add 172.22.10.60/24 dev eth1
+        - ip address add 172.21.20.60/24 dev eth1
 
   links:
     # ✅ Core ring

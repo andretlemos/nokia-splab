@@ -1,37 +1,81 @@
+{% set system_ipv4 = host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv4") | first %}
+{% set system_ipv6 = host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv6") | first %}
     bgp:
       admin-state: enable
       ibgp-multipath: true
+      next-hop-resolution:
+          labeled-routes:
+            transport-tunnel:
+              family:
+                - family-type: vpn
+                  resolution: any
+                - family-type: label-ipv4
+                  resolution: any
+                - family-type: label-ipv6
+                  resolution: any
       group:
         - group-name: IBGPv4
           admin-state: enable
           path-mtu-discovery: true
           type: internal
-          peer-as: 65500     
+          peer-as: 65500 
+          next-hop-self: true
+          description: "IBGPv4 neighbor"
+          family:
+            ipv4: true
+          local-address: {{ system_ipv4 }}
+
         - group-name: IBGPv6
           admin-state: enable
           path-mtu-discovery: true
           type: internal
           peer-as: 65500
+          description: "IBGPv6 neighbor"
+          next-hop-self: true
+          family:
+            ipv6: true
+          local-address: {{ system_ipv6 }}
+
+        - group-name: EBGPv4
+          admin-state: enable
+          type: external
+          import:
+            policy: [IMPORT-ALL]
+          export:
+            policy: [EXPORT-ALL]
+          family:
+            ipv4: true
+        
+        - group-name: EBGPv6
+          admin-state: enable
+          type: external
+          import:
+            policy: [IMPORT-ALL]
+          export:
+            policy: [EXPORT-ALL]
+          family:
+            ipv6: true
+
       neighbor:
-{% set ns_v4 = host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv4") | first %}
 {% for neighbor in host.data.ibgp.ipv4 %}
-{% if neighbor != ns_v4 %}
-      - ip-address: {{ neighbor }}
-        description: "IBGPv4 neighbor"
-        group: "IBGPv4"
-        next-hop-self: true
-        family:
-          ipv4: true
+{% if neighbor != system_ipv4 %}
+      - ip-address: {{ neighbor }}        
+        group: "IBGPv4"        
 {% endif %}
 {% endfor %}
-{% set ns_v6 = host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv6") | first %}
+
 {% for neighbor in host.data.ibgp.ipv6 %}
-{% if neighbor != ns_v6 %}
-      - ip-address: {{ neighbor }}
-        description: "IBGPv6 neighbor"
-        group: "IBGPv6"
-        next-hop-self: true
-        family:
-          ipv6: true
+{% if neighbor != system_ipv6 %}
+      - ip-address: {{ neighbor }}        
+        group: "IBGPv6"        
 {% endif %}
+{% endfor %}
+{# EBGP Sessions #}
+{% for neighbor in host.data.ebgp_sessions %}
+      - ip-address: {{ neighbor.remote_address }}
+        group: {{ neighbor.peer_group }}
+        admin-state: {{ neighbor.status }}
+        description: {{ neighbor.description }}
+        peer-as: {{ neighbor.remote_asn }}
+        local-address: "{{ neighbor.local_address }}"
 {% endfor %}

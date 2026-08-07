@@ -1,7 +1,7 @@
 router:
   - router-name: Base
 {# BGP Configuration #}
-    autonomous-system: 65000
+    autonomous-system: 65500
     router-id: {{ host.data.iface_list | selectattr("name", "equalto", "system") | map(attribute="ipv4") | first  }}
 {# Segment Routing Config #}
     mpls-labels:

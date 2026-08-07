@@ -102,12 +102,13 @@ def get_ebgp_from_netbox(task:Task) -> Result:
             status = "disable"
 
         ebgp_list.append({
+            "device": neighbor.device,            
             "local_asn": neighbor.local_as.asn,
             "remote_asn": neighbor.remote_as.asn,
             "local_address":  neighbor.local_address.address.split("/")[0],
             "remote_address": neighbor.remote_address.address.split("/")[0],
             "status": status,
-            "description": neighbor.description,
+            "description": neighbor.name,
             "peer_group": neighbor.peer_group.name if neighbor.peer_group else None,
             "export_policy": neighbor.export_policies[0].name if neighbor.export_policies else None,
             "import_policy": neighbor.import_policies[0].name if neighbor.import_policies else None,
