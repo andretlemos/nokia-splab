@@ -32,10 +32,10 @@ topology:
     pe3: { group: nokia_srsim, mgmt-ipv4: 10.10.11.3 }
     pe4: { group: nokia_srsim, mgmt-ipv4: 10.10.11.4 }
 
-    as1: { group: cisco, mgmt-ipv4: 10.10.1.1 }
-    as2: { group: cisco, mgmt-ipv4: 10.10.2.2 }
-    as3: { group: cisco, mgmt-ipv4: 10.10.3.3 }
-    as4: { group: cisco, mgmt-ipv4: 10.10.4.4 }
+    as1: { group: cisco, mgmt-ipv4: 10.10.1.1, startup-config: ./configs/as1.eos }
+    as2: { group: cisco, mgmt-ipv4: 10.10.2.2, startup-config: ./configs/as2.eos }
+    as3: { group: cisco, mgmt-ipv4: 10.10.3.3, startup-config: ./configs/as3.eos }    
+    as4: { group: cisco, mgmt-ipv4: 10.10.4.4, startup-config: ./configs/as4.eos }
 
     client1:
       kind: linux
