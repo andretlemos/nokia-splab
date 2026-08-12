@@ -1,10 +1,11 @@
-from dotenv import load_dotenv
 import os
-import pynetbox
 
-#Load the variables
+import pynetbox
+from dotenv import load_dotenv
+
+# Load the variables
 load_dotenv("../env")
-#Connect To Netbox
+# Connect To Netbox
 NETBOX_URL = os.getenv("NETBOX_URL")
 NETBOX_TOKEN = os.getenv("NETBOX_TOKEN")
 nb = pynetbox.api(NETBOX_URL, token=NETBOX_TOKEN)

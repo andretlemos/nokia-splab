@@ -6,7 +6,7 @@
         ipv6-routing: native
         level-capability: "2"
         prefix-attributes-tlv: true
-        reference-bandwidth: "1000000000"
+        reference-bandwidth: "1000000000"        
         standard-multi-instance: true
         system-id: {{ host.data.isis["system-id"] }}
         area-address:
@@ -29,10 +29,11 @@
 {% if interface.name == "system" %}
           - interface-name: "system"
             passive: true
+            admin-state: enable            
             ipv4-node-sid: 
-              label: "20202"
+              label:  "{{ 20000 + (host.data.iface_list | selectattr('name', 'equalto', 'system') | map(attribute='ipv4') | first).split('.')[-2] | int }}"
             ipv6-node-sid:
-              label: "20302"
+              label: "{{ 20300 + (host.data.iface_list | selectattr('name', 'equalto', 'system') | map(attribute='ipv4') | first).split('.')[-2] | int }}"
 {% elif interface.name != "Management0" and "ISIS" in interface.tags %}
           - interface-name: "{{ interface.description }}"
             admin-state: enable

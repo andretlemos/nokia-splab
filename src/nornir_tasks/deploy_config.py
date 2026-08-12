@@ -1,15 +1,16 @@
-from src.modules.init_nornir import nr
-from src.modules.load_netbox import nb
-from nornir.core.task import Task, Result
-from nornir_jinja2.plugins.tasks import template_file
-from nornir_rich.functions import print_result
-from nornir_rich.progress_bar import RichProgressBar
-from nornir_pygnmi.tasks import gnmi_set
+import argparse
+import json
 from ipaddress import ip_interface
 
-import json
 import yaml
-import argparse
+from nornir.core.task import Result, Task
+from nornir_jinja2.plugins.tasks import template_file
+from nornir_pygnmi.tasks import gnmi_set
+from nornir_rich.functions import print_result
+from nornir_rich.progress_bar import RichProgressBar
+
+from src.modules.init_nornir import nr
+from src.modules.load_netbox import nb
 
 
 def get_config_context_from_netbox(task: Task) -> Result:
@@ -24,11 +25,14 @@ def get_config_context_from_netbox(task: Task) -> Result:
     """
     device = nb.dcim.devices.get(name=task.host.name)
     if device and device.config_context:
-      task.host.data.update(device.config_context)
-    return Result(host=task.host, result=f"Got config context for {task.host.name}: {device.config_context}")
+        task.host.data.update(device.config_context)
+    return Result(
+        host=task.host,
+        result=f"Got config context for {task.host.name}: {device.config_context}",
+    )
+
 
 def get_interfaces_from_netbox(task: Task) -> Result:
-
     """
     Retrieves a list of interfaces and their IP addresses from NetBox and updates the task's host data.
 
@@ -43,7 +47,7 @@ def get_interfaces_from_netbox(task: Task) -> Result:
 
     for iface in interfaces:
         ips = list(nb.ipam.ip_addresses.filter(interface_id=iface.id))
-       
+
         ipv4_address = None
         ipv4_prefix = None
         ipv6_address = None
@@ -59,7 +63,7 @@ def get_interfaces_from_netbox(task: Task) -> Result:
             elif ip_obj.version == 6:
                 ipv6_address = str(ip_obj.ip)
                 ipv6_prefix = ip_obj.network.prefixlen
-        
+
         iface_list.append(
             {
                 "name": iface.name,
@@ -74,11 +78,13 @@ def get_interfaces_from_netbox(task: Task) -> Result:
         )
 
     task.host["iface_list"] = iface_list
-       
-    return Result(host=task.host, result=f"Got interfaces data for {task.host.name}: {iface_list}")
+
+    return Result(
+        host=task.host, result=f"Got interfaces data for {task.host.name}: {iface_list}"
+    )
 
 
-def get_ebgp_from_netbox(task:Task) -> Result:
+def get_ebgp_from_netbox(task: Task) -> Result:
     """
     Retrieves eBGP session details from NetBox and updates the task's host data.
 
@@ -95,27 +101,35 @@ def get_ebgp_from_netbox(task:Task) -> Result:
     ebgp_list = []
 
     for neighbor in bgp_sessions:
-
         if neighbor.status.value == "active":
             status = "enable"
         else:
             status = "disable"
 
-        ebgp_list.append({
-            "device": neighbor.device,            
-            "local_asn": neighbor.local_as.asn,
-            "remote_asn": neighbor.remote_as.asn,
-            "local_address":  neighbor.local_address.address.split("/")[0],
-            "remote_address": neighbor.remote_address.address.split("/")[0],
-            "status": status,
-            "description": neighbor.name,
-            "peer_group": neighbor.peer_group.name if neighbor.peer_group else None,
-            "export_policy": neighbor.export_policies[0].name if neighbor.export_policies else None,
-            "import_policy": neighbor.import_policies[0].name if neighbor.import_policies else None,
-        })
+        ebgp_list.append(
+            {
+                "device": neighbor.device,
+                "local_asn": neighbor.local_as.asn,
+                "remote_asn": neighbor.remote_as.asn,
+                "local_address": neighbor.local_address.address.split("/")[0],
+                "remote_address": neighbor.remote_address.address.split("/")[0],
+                "status": status,
+                "description": neighbor.name,
+                "peer_group": neighbor.peer_group.name if neighbor.peer_group else None,
+                "export_policy": neighbor.export_policies[0].name
+                if neighbor.export_policies
+                else None,
+                "import_policy": neighbor.import_policies[0].name
+                if neighbor.import_policies
+                else None,
+            }
+        )
 
     task.host.data.update({"ebgp_sessions": ebgp_list})
-    return Result(host=task.host, result=f"Got ebgp data for {task.host.name}: {ebgp_list}")
+    return Result(
+        host=task.host, result=f"Got ebgp data for {task.host.name}: {ebgp_list}"
+    )
+
 
 def render_template_json(task: Task) -> Result:
     """
@@ -132,18 +146,19 @@ def render_template_json(task: Task) -> Result:
         template="sros.j2",
         path="./src/templates/",
         interfaces=task.host.data.get("interfaces", []),
-        config_context = task.host.data,        
-        )
-    
+        config_context=task.host.data,
+    )
+
     rendered = r.result
     parsed = yaml.safe_load(rendered)
     rendered_json = json.dumps(parsed, indent=2)
-    
+
     filename = f"src/rendered_config/{task.host.name}.json"
     with open(filename, "w") as f:
         f.write(rendered_json)
-    
+
     return Result(host=task.host, result=f"Rendered config written to {filename}")
+
 
 def push_config_gnmi(task: Task, dry_run: bool = False) -> Result:
     """
@@ -154,7 +169,7 @@ def push_config_gnmi(task: Task, dry_run: bool = False) -> Result:
 
     Returns:
         Result: A result object containing the updated host data and the result of the gNMI set operation.
-    """    
+    """
     filename = f"src/rendered_config/{task.host.name}.json"
 
     with open(filename) as f:
@@ -162,9 +177,7 @@ def push_config_gnmi(task: Task, dry_run: bool = False) -> Result:
 
     if dry_run:
         return Result(
-            host=task.host,
-            changed=False,
-            result=json.dumps(rendered, indent=2)
+            host=task.host, changed=False, result=json.dumps(rendered, indent=2)
         )
 
     r = task.run(
@@ -173,10 +186,7 @@ def push_config_gnmi(task: Task, dry_run: bool = False) -> Result:
         update=[("", rendered)],
     )
 
-    return Result(
-        host=task.host,
-        result=r.result
-    )
+    return Result(host=task.host, result=r.result)
 
 
 def main(nr=nr):
@@ -186,19 +196,13 @@ def main(nr=nr):
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Render configuration and show payload without pushing"
+        help="Render configuration and show payload without pushing",
     )
 
-    parser.add_argument(
-        "--devices",
-        nargs="+",
-        help="Choose devices to filter"
-    )
+    parser.add_argument("--devices", nargs="+", help="Choose devices to filter")
 
     parser.add_argument(
-        "--skip-push",
-        action="store_true",
-        help="Render the yaml configuration only"
+        "--skip-push", action="store_true", help="Render the yaml configuration only"
     )
 
     args = parser.parse_args()
@@ -208,9 +212,7 @@ def main(nr=nr):
     # Inventory filtering
     #
     if args.devices:
-        nornir_obj = nornir_obj.filter(
-            filter_func=lambda h: h.name in args.devices
-        )
+        nornir_obj = nornir_obj.filter(filter_func=lambda h: h.name in args.devices)
 
     nornir_obj = nornir_obj.with_processors([RichProgressBar()])
 
@@ -224,9 +226,7 @@ def main(nr=nr):
     #
     # Render JSON
     #
-    results = nornir_obj.run(
-        task=render_template_json
-    )
+    results = nornir_obj.run(task=render_template_json)
     print_result(results)
 
     #
@@ -239,10 +239,9 @@ def main(nr=nr):
     #
     # Push / Dry-run
     #
-    results = nornir_obj.run(
-        task=push_config_gnmi,
-        dry_run=args.dry_run
-    )
+    results = nornir_obj.run(task=push_config_gnmi, dry_run=args.dry_run)
     print_result(results)
+
+
 if __name__ == "__main__":
     main()

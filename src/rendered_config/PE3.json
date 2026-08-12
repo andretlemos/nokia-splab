@@ -321,11 +321,12 @@
               {
                 "interface-name": "system",
                 "passive": true,
+                "admin-state": "enable",
                 "ipv4-node-sid": {
-                  "label": "20202"
+                  "label": "20101"
                 },
                 "ipv6-node-sid": {
-                  "label": "20302"
+                  "label": "20401"
                 }
               }
             ],
@@ -430,6 +431,18 @@
           "admin-state": "enable",
           "ibgp-multipath": true,
           "next-hop-resolution": {
+            "shortcut-tunnel": {
+              "family": [
+                {
+                  "family-type": "ipv4",
+                  "resolution": "any"
+                },
+                {
+                  "family-type": "ipv6",
+                  "resolution": "any"
+                }
+              ]
+            },
             "labeled-routes": {
               "transport-tunnel": {
                 "family": [
@@ -459,7 +472,9 @@
               "next-hop-self": true,
               "description": "IBGPv4 neighbor",
               "family": {
-                "ipv4": true
+                "ipv4": true,
+                "flow-ipv4": true,
+                "bgp-ls": true
               },
               "local-address": "192.168.101.3"
             },
@@ -472,7 +487,9 @@
               "description": "IBGPv6 neighbor",
               "next-hop-self": true,
               "family": {
-                "ipv6": true
+                "ipv6": true,
+                "flow-ipv6": true,
+                "label-ipv6": true
               },
               "local-address": "2001:db8:cafe:1::3"
             },
@@ -515,22 +532,6 @@
           ],
           "neighbor": [
             {
-              "ip-address": "192.168.100.1",
-              "group": "IBGPv4"
-            },
-            {
-              "ip-address": "192.168.100.2",
-              "group": "IBGPv4"
-            },
-            {
-              "ip-address": "192.168.100.3",
-              "group": "IBGPv4"
-            },
-            {
-              "ip-address": "192.168.100.4",
-              "group": "IBGPv4"
-            },
-            {
               "ip-address": "192.168.101.1",
               "group": "IBGPv4"
             },
@@ -541,22 +542,6 @@
             {
               "ip-address": "192.168.101.4",
               "group": "IBGPv4"
-            },
-            {
-              "ip-address": "2001:db8:cafe::1",
-              "group": "IBGPv6"
-            },
-            {
-              "ip-address": "2001:db8:cafe::2",
-              "group": "IBGPv6"
-            },
-            {
-              "ip-address": "2001:db8:cafe::3",
-              "group": "IBGPv6"
-            },
-            {
-              "ip-address": "2001:db8:cafe::4",
-              "group": "IBGPv6"
             },
             {
               "ip-address": "2001:db8:cafe:1::1",

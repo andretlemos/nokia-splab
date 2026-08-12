@@ -4,6 +4,12 @@
       admin-state: enable
       ibgp-multipath: true
       next-hop-resolution:
+          shortcut-tunnel:
+            family:
+              - family-type: ipv4
+                resolution: any                  
+              - family-type: ipv6
+                resolution: any
           labeled-routes:
             transport-tunnel:
               family:
@@ -23,6 +29,8 @@
           description: "IBGPv4 neighbor"
           family:
             ipv4: true
+            flow-ipv4: true
+            bgp-ls: true
           local-address: {{ system_ipv4 }}
 
         - group-name: IBGPv6
@@ -34,6 +42,8 @@
           next-hop-self: true
           family:
             ipv6: true
+            flow-ipv6: true
+            label-ipv6: true
           local-address: {{ system_ipv6 }}
 
         - group-name: EBGPv4

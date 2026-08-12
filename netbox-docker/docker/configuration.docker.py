@@ -30,7 +30,9 @@ def read_configurations(config_module, config_dir, main_config):
 
     main_config_path = abspath(f"{config_dir}/{main_config}.py")
     if isfile(main_config_path):
-        _import(f"{config_module}.{main_config}", main_config_path, loaded_configurations)
+        _import(
+            f"{config_module}.{main_config}", main_config_path, loaded_configurations
+        )
     else:
         print(f"⚠️ Main configuration '{main_config_path}' not found.")
 
@@ -51,7 +53,7 @@ def read_configurations(config_module, config_dir, main_config):
             if f.name == f"{config_dir}.py":
                 continue
 
-            module_name = f"{config_module}.{f.name[:-len('.py')]}".replace(".", "_")
+            module_name = f"{config_module}.{f.name[: -len('.py')]}".replace(".", "_")
             _import(module_name, f.path, loaded_configurations)
 
     if len(loaded_configurations) == 0:

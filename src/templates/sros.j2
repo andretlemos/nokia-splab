@@ -18,5 +18,7 @@ nokia-conf:configure:
 
 {% include "rsvp.j2" %}
 
+{% if host.data.ibgp is defined %}
 {% include "bgp.j2" %}
+{% endif %}
 {% endfilter %}

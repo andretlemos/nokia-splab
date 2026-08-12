@@ -1,1 +1,1 @@
-PLUGINS = ['netbox_bgp']
+PLUGINS = ["netbox_bgp"]
