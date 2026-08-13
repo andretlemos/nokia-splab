@@ -9,47 +9,47 @@
       "id": "p1",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 220,
-        "y": 260
+        "x": 500,
+        "y": -120
       }
     },
     {
       "id": "p2",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 340,
-        "y": 120
+        "x": 500,
+        "y": 20
       }
     },
     {
       "id": "p3",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 360,
-        "y": 380
+        "x": 320,
+        "y": -120
       }
     },
     {
       "id": "p4",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 460,
-        "y": 220
+        "x": 320,
+        "y": 20
       }
     },
     {
       "id": "pe1",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 220,
-        "y": 420
+        "x": 620,
+        "y": -120
       }
     },
     {
       "id": "pe2",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 480,
+        "x": 620,
         "y": 20
       }
     },
@@ -57,31 +57,31 @@
       "id": "pe3",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 360,
-        "y": 580
+        "x": 160,
+        "y": -120
       }
     },
     {
       "id": "pe4",
       "interfacePattern": "1/1/c{n}/1",
       "position": {
-        "x": 640,
-        "y": 260
+        "x": 160,
+        "y": 20
       }
     },
     {
       "id": "as1",
       "interfacePattern": "e0/{n}",
       "position": {
-        "x": 400,
-        "y": 480
+        "x": 760,
+        "y": -120
       }
     },
     {
       "id": "as2",
       "interfacePattern": "e0/{n}",
       "position": {
-        "x": 640,
+        "x": 760,
         "y": 20
       }
     },
@@ -89,30 +89,51 @@
       "id": "as3",
       "interfacePattern": "e0/{n}",
       "position": {
-        "x": 340,
-        "y": 740
+        "x": 40,
+        "y": -120
       }
     },
     {
       "id": "as4",
       "interfacePattern": "e0/{n}",
       "position": {
-        "x": 560,
-        "y": 380
+        "x": 40,
+        "y": 20
       }
     },
     {
       "id": "client1",
       "position": {
-        "x": 500,
-        "y": 680
+        "x": 160,
+        "y": -240
       }
     },
     {
       "id": "client2",
       "position": {
-        "x": 780,
-        "y": 360
+        "x": 160,
+        "y": 160
+      }
+    },
+    {
+      "id": "grafana",
+      "position": {
+        "x": -220,
+        "y": 120
+      }
+    },
+    {
+      "id": "prometheus",
+      "position": {
+        "x": -200,
+        "y": -80
+      }
+    },
+    {
+      "id": "gnmic",
+      "position": {
+        "x": -220,
+        "y": 20
       }
     }
   ],

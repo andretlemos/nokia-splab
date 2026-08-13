@@ -1,0 +1,233 @@
+username: admin
+password: NokiaSros1!
+skip-verify: true
+port: 57400
+timeout: 10s
+encoding: json_ietf
+
+# Definição global de âncoras para reutilização
+common_subscriptions: &sros_subs    
+  - sros_if_oper_state
+  - sros_if_stats
+  - sros_if_traffic_rate
+  - sros_cpu
+  - sros_mem
+  - sros_bgp_stats
+  - sros_bgp_up_peers
+  - sros_bgp_neighbor_stats
+  - sros_ipv4_stats
+  - sros_ipv4_stats_direct
+  - sros_ipv4_stats_bgp
+  - sros_ipv6_stats
+  - sros_ipv6_bgp_direct
+  - sros_ipv4_routes
+  - sros_ipv6_routes
+  - sros_bgp_neighbor_session_state
+  - sros_bgp_routes_stats
+  - sros_bgp_routes_active
+  - sros_bgp_used_routes
+ 
+subscriptions:
+  sros_if_oper_state:
+    paths:
+      - /state/port[port-id=*]/oper-state
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+  
+  sros_if_stats:
+    paths:
+      - /state/port[port-id=*]/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_if_traffic_rate:
+    paths:
+      - /state/port[port-id=*]/ethernet/oper-speed
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_cpu:
+    paths:
+      - /state/system/cpu[sample-period=300]/system/cpu-usage
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_mem:
+    paths:
+      - /state/system/memory-pools
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_bgp_stats:
+    paths:
+      - /state/router[router-name=*]/bgp/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_bgp_up_peers:
+    paths:      
+      - /state/router[router-name=*]/bgp/convergence/family[family-type=ipv4]
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_bgp_neighbor_stats:
+    paths:
+      - /state/router[router-name=*]/bgp/neighbor[ip-address=*]/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_bgp_neighbor_session_state:
+    paths:
+      - /state/router[router-name=*]/bgp/neighbor[ip-address=*]/statistics/session-state
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv4_stats:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv4/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv4_stats_direct:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv4/statistics/direct
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv4_stats_bgp:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv4/statistics/bgp
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv6_stats:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv6/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv6_bgp_direct:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv6/statistics/direct
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv4_routes:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv4/route[ipv4-prefix=*]
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_ipv6_routes:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv6/route[ipv6-prefix=*]
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_bgp_routes_stats:
+    paths:
+      - /state/router[router-name=*]/route-table/unicast/ipv4/statistics/bgp
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s  
+
+  sros_bgp_routes_active:
+    paths:
+      - /state/router[router-name=*]/bgp/neighbor[ip-address=*]/statistics/family-prefix/ipv4/active
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s 
+
+  sros_bgp_used_routes:
+    paths:
+      - /state/router[router-name=*]/bgp/rib/ipv6-unicast/local-rib/routes[prefix=*][neighbor=*][owner=*][router-instance-origin=*][path-id=*]/used-route
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s 
+ 
+targets:
+  p1:
+    insecure: true
+    subscriptions: *sros_subs
+  p2:
+    insecure: true
+    subscriptions: *sros_subs
+  p3:
+    insecure: true
+    subscriptions: *sros_subs
+  p4:
+    insecure: true
+    subscriptions: *sros_subs
+  pe1:
+    insecure: true
+    subscriptions: *sros_subs
+  pe2:
+    insecure: true
+    subscriptions: *sros_subs
+  pe3:
+    insecure: true
+    subscriptions: *sros_subs
+  pe4:
+    insecure: true
+    subscriptions: *sros_subs
+
+outputs:
+  prom:
+    type: prometheus
+    listen: :9273
+    path: /metrics
+    metric-prefix: gnmic
+    append-subscription-name: true
+    export-timestamps: true
+    debug: false
+    event-processors:
+      - trim-prefixes
+      - oper-state-to-int      
+      - rename-port-sros
+
+processors:
+  trim-prefixes:
+    event-strings:
+      value-names:
+        - ".*"
+      transforms:
+        - path-base:
+            apply-on: "name"
+  oper-state-to-int:
+    event-strings:
+      value-names:
+        - ".*"
+      transforms:
+        - replace:
+            apply-on: "value"
+            old: "up"
+            new: "1"
+        - replace:
+            apply-on: "value"
+            old: "down"
+            new: "0"
+  rename-port-sros:
+    event-strings:
+      tag-names:
+        - "^port_port-id"
+      transforms:
+        - replace:
+            apply-on: "name"
+            old: "port_port-id"
+            new: "interface_name"

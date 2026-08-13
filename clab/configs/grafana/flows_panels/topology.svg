@@ -1,0 +1,368 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1291" height="435" viewBox="0 0 1291 435"><defs>
+<filter id="text-shadow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+  <feFlood flood-color="#3C3E41" result="color"/>
+  <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+  <feMerge>
+    <feMergeNode in="shadow"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+</defs><g class="export-graph-layer" transform="translate(78.68427599656974, 233.52928474790312) scale(0.7366860170910455)"><g class="export-edge" data-id="Clab-Link0"><path d="M 520 -80 L 520 20" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="500.20947265625" y="-66" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="520" y="-60" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g><g class="edge-label"><rect x="500.20947265625" y="-6" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="520" y="0" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g></g><g class="export-edge" data-id="Clab-Link1"><path d="M 500 40 L 360 40" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="460.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="480" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="360.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="380" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g></g><g class="export-edge" data-id="Clab-Link2"><path d="M 500 -100 L 360 -100" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="460.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="480" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="360.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="380" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g></g><g class="export-edge" data-id="Clab-Link3"><path d="M 340 -80 L 340 20" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="320.20947265625" y="-66" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="340" y="-60" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="320.20947265625" y="-6" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="340" y="0" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g></g><g class="export-edge" data-id="Clab-Link4"><path d="M 620 -100 L 540 -100" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="580.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="600" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g><g class="edge-label"><rect x="540.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="560" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/3</text></g></g><g class="export-edge" data-id="Clab-Link5"><path d="M 620 40 L 540 40" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="580.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="600" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g><g class="edge-label"><rect x="540.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="560" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/3</text></g></g><g class="export-edge" data-id="Clab-Link6"><path d="M 200 -100 L 320 -100" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="200.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="220" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g><g class="edge-label"><rect x="280.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="300" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/3</text></g></g><g class="export-edge" data-id="Clab-Link7"><path d="M 200 40 L 320 40" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="200.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="220" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/1</text></g><g class="edge-label"><rect x="280.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="300" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/3</text></g></g><g class="export-edge" data-id="Clab-Link8"><path d="M 660 -100 L 760 -100" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="660.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="680" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="728.2685546875" y="-106" width="23.462890625" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="740" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">eth1</text></g></g><g class="export-edge" data-id="Clab-Link9"><path d="M 660 40 L 760 40" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="660.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="680" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="728.2685546875" y="34" width="23.462890625" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="740" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">eth1</text></g></g><g class="export-edge" data-id="Clab-Link10"><path d="M 160 -100 L 80 -100" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="120.20947265625" y="-106" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="140" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="88.2685546875" y="-106" width="23.462890625" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="100" y="-100" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">eth1</text></g></g><g class="export-edge" data-id="Clab-Link11"><path d="M 160 40 L 80 40" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="120.20947265625" y="34" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="140" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/2</text></g><g class="edge-label"><rect x="88.2685546875" y="34" width="23.462890625" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="100" y="40" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">eth1</text></g></g><g class="export-edge" data-id="Clab-Link12"><path d="M 180 -120 L 180 -200" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="160.20947265625" y="-146" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="180" y="-140" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/3</text></g><g class="edge-label"><rect x="168.2685546875" y="-186" width="23.462890625" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="180" y="-180" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">eth1</text></g></g><g class="export-edge" data-id="Clab-Link13"><path d="M 180 60 L 180 160" fill="none" stroke="#00df2b" stroke-width="4" opacity="0.5"/><g class="edge-label"><rect x="160.20947265625" y="74" width="39.5810546875" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="180" y="80" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">1/1/c1/3</text></g><g class="edge-label"><rect x="168.2685546875" y="134" width="23.462890625" height="12" fill="rgb(30, 31, 53)" rx="4" ry="4"/><text x="180" y="140" font-size="10" font-family='"Helvetica Neue", Helvetica, Arial, sans-serif' dominant-baseline="central" fill="rgb(248, 248, 242)" text-anchor="middle">eth1</text></g></g><g class="export-node topology-node" data-id="p1"><g transform="rotate(0 520 -100)"><rect x="500" y="-120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(500, -120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="509.77110290527344" y="-78" width="20.457794189453125" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="520" y="-68.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">p1</text></g><g class="export-node topology-node" data-id="p2"><g transform="rotate(0 520 40)"><rect x="500" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(500, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="509.77110290527344" y="62" width="20.457794189453125" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="520" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">p2</text></g><g class="export-node topology-node" data-id="p3"><g transform="rotate(0 340 -100)"><rect x="320" y="-120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(320, -120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="329.77110290527344" y="-78" width="20.457794189453125" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="340" y="-68.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">p3</text></g><g class="export-node topology-node" data-id="p4"><g transform="rotate(0 340 40)"><rect x="320" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(320, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="329.77110290527344" y="62" width="20.457794189453125" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="340" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">p4</text></g><g class="export-node topology-node" data-id="pe1"><g transform="rotate(0 640 -100)"><rect x="620" y="-120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(620, -120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="626.6566543579102" y="-78" width="26.686691284179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="640" y="-68.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">pe1</text></g><g class="export-node topology-node" data-id="pe2"><g transform="rotate(0 640 40)"><rect x="620" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(620, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="626.6566543579102" y="62" width="26.686691284179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="640" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">pe2</text></g><g class="export-node topology-node" data-id="pe3"><g transform="rotate(0 180 -100)"><rect x="160" y="-120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(160, -120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="166.65665435791016" y="-78" width="26.686691284179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="180" y="-68.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">pe3</text></g><g class="export-node topology-node" data-id="pe4"><g transform="rotate(0 180 40)"><rect x="160" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(160, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="166.65665435791016" y="62" width="26.686691284179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="180" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">pe4</text></g><g class="export-node topology-node" data-id="as1"><g transform="rotate(0 780 -100)"><rect x="760" y="-120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(760, -120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="766.9711074829102" y="-78" width="26.057785034179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="780" y="-68.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">as1</text></g><g class="export-node topology-node" data-id="as2"><g transform="rotate(0 780 40)"><rect x="760" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(760, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="766.9711074829102" y="62" width="26.057785034179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="780" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">as2</text></g><g class="export-node topology-node" data-id="as3"><g transform="rotate(0 60 -100)"><rect x="40" y="-120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(40, -120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="46.971107482910156" y="-78" width="26.057785034179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="60" y="-68.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">as3</text></g><g class="export-node topology-node" data-id="as4"><g transform="rotate(0 60 40)"><rect x="40" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(40, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="46.971107482910156" y="62" width="26.057785034179688" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="60" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">as4</text></g><g class="export-node topology-node" data-id="client1"><g transform="rotate(0 180 -220)"><rect x="160" y="-240" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(160, -240)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="159.8125228881836" y="-198" width="40.37495422363281" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="180" y="-188.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">client1</text></g><g class="export-node topology-node" data-id="client2"><g transform="rotate(0 180 180)"><rect x="160" y="160" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(160, 160)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="159.8125228881836" y="202" width="40.37495422363281" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="180" y="211.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">client2</text></g><g class="export-node topology-node" data-id="gnmic"><g transform="rotate(0 -200 40)"><rect x="-220" y="20" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(-220, 20)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="-218.93787384033203" y="62" width="37.87574768066406" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="-200" y="71.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">gnmic</text></g><g class="export-node topology-node" data-id="prometheus"><g transform="rotate(0 -180 -60)"><rect x="-200" y="-80" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(-200, -80)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="-213.5722198486328" y="-38" width="67.14443969726562" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="-180" y="-28.6" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">prometheus</text></g><g class="export-node topology-node" data-id="grafana"><g transform="rotate(0 -200 140)"><rect x="-220" y="120" width="40" height="40" rx="4" ry="4" fill="#005aff"/><g transform="translate(-220, 120)" style="color: #005aff"><g transform="scale(0.3333)">
+                        
+                        <rect height="120" width="120" fill="currentColor" />
+                        <g>
+                            <g>
+                                <path d="M71.7,19.7V48h28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M91.2,38.5l7.5,7.6c1.3,1.3,1.3,3.1,0,4.3L91.1,58" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M20,47.8h28.4v-28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38.8,28.3l7.6-7.5c1.3-1.3,3.1-1.3,4.3,0l7.7,7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M48,100.3V72H20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28.5,81.5L21,73.9c-1.3-1.3-1.3-3.1,0-4.3l7.6-7.7" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <g>
+                                <path d="M100,71.9H71.6v28" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M81.2,91.4l-7.6,7.5c-1.3,1.3-3.1,1.3-4.3,0l-7.7-7.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </g></g></g><rect x="-222.99293518066406" y="162" width="45.985870361328125" height="18.8" fill="rgba(0, 0, 0, 0.7)" rx="3" ry="3"/><text x="-200" y="171.4" font-size="11.2" font-weight="500" font-family='Roboto, sans-serif' dominant-baseline="central" fill="#F5F5F5" text-anchor="middle" filter="url(#text-shadow)">grafana</text></g></g></svg>
