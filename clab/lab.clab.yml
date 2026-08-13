@@ -42,14 +42,16 @@ topology:
       group: vm
       exec:
         - ip address add 172.21.10.60/24 dev eth1
-        - ip route add 0.0.0.0/0 via 172.21.10.1 dev eth 1
+        - ip route del default
+        - ip route add 0.0.0.0/0 via 172.21.10.1 dev eth1
 
     client2:
       kind: linux
       group: vm
       exec:
         - ip address add 172.21.20.60/24 dev eth1
-        - ip route add 0.0.0.0/0 via 172.21.20.1 dev eth 1
+        - ip route del default
+        - ip route add 0.0.0.0/0 via 172.21.20.1 dev eth1
 
     #### Telemetry Stack
     #gnmic:

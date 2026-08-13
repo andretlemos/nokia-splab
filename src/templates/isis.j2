@@ -1,4 +1,5 @@
-
+{% set ip = host.data.iface_list | selectattr('name', 'equalto', 'system') | map(attribute='ipv4') | first %}
+{% set node_id = (ip.split('.')[-2] ~ ip.split('.')[-1]) | int %}
     isis:
       - isis-instance: 0
         admin-state: enable
@@ -31,9 +32,9 @@
             passive: true
             admin-state: enable            
             ipv4-node-sid: 
-              label:  "{{ 20000 + (host.data.iface_list | selectattr('name', 'equalto', 'system') | map(attribute='ipv4') | first).split('.')[-2] | int }}"
+              label:  "{{ 20000 + node_id  }}"
             ipv6-node-sid:
-              label: "{{ 20300 + (host.data.iface_list | selectattr('name', 'equalto', 'system') | map(attribute='ipv4') | first).split('.')[-2] | int }}"
+              label: "{{ 20300 + node_id }}"
 {% elif interface.name != "Management0" and "ISIS" in interface.tags %}
           - interface-name: "{{ interface.description }}"
             admin-state: enable

@@ -328,10 +328,10 @@
                 "passive": true,
                 "admin-state": "enable",
                 "ipv4-node-sid": {
-                  "label": "20100"
+                  "label": "21003"
                 },
                 "ipv6-node-sid": {
-                  "label": "20400"
+                  "label": "21303"
                 }
               }
             ],

@@ -300,10 +300,10 @@
                 "passive": true,
                 "admin-state": "enable",
                 "ipv4-node-sid": {
-                  "label": "20101"
+                  "label": "21011"
                 },
                 "ipv6-node-sid": {
-                  "label": "20401"
+                  "label": "21311"
                 }
               }
             ],
