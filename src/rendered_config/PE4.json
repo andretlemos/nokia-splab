@@ -40,6 +40,18 @@
         }
       }
     },
+    "log": {
+      "syslog": {
+        "syslog-name": "1",
+        "address": "10.10.20.14",
+        "port": 1514,
+        "facility": "local7",
+        "severity": "info",
+        "hostname": {
+          "use-system-name": {}
+        }
+      }
+    },
     "policy-options": {
       "policy-statement": [
         {

@@ -10,6 +10,7 @@ common_subscriptions: &sros_subs
   - sros_if_oper_state
   - sros_if_stats
   - sros_if_traffic_rate
+  - sros_interface_traffic
   - sros_cpu
   - sros_mem
   - sros_bgp_stats
@@ -46,6 +47,12 @@ subscriptions:
     paths:
       - /state/port[port-id=*]/ethernet/oper-speed
     mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  sros_interface_traffic:
+    paths:
+      - /state/port[port-id=*]/statistics
     stream-mode: sample
     sample-interval: 5s
 

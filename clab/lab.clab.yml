@@ -84,29 +84,29 @@ topology:
         - configs/grafana/dashboards:/var/lib/grafana/dashboards
       ports:
         - 3000:3000
-      env:
-        GF_INSTALL_PLUGINS: "andrewbmchugh-flow-panel"
-        # env vars to enable anonymous access
-        GF_ORG_ROLE: "Admin"
-        GF_ORG_NAME: "Main Org"
-        GF_AUTH_ANONYMOUS_ENABLED: "true"
-        GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
-        GF_AUTH_ANONYMOUS: "true"
-        GF_AUTH_OAUTH_AUTO_LOGIN: "true"
+
       
     # Logging Stack
     
-    #loki:
-    #  kind: linux
-    #  mgmt-ipv4: 10.10.20.13
-    #  image: grafana/loki:3.6.15
-    #  binds:
-    #    - configs/loki:/etc/loki
-    #  cmd: --config.file=/etc/loki/loki-config.yml
-    #  ports:
-    #    - 3100:3100
+    loki:
+      kind: linux
+      mgmt-ipv4: 10.10.20.13
+      image: grafana/loki:3.6.15
+      binds:
+        - configs/loki:/etc/loki
+      cmd: --config.file=/etc/loki/loki-config.yml
+      ports:
+        - 3100:3100
     
-
+    promtail:
+      kind: linux
+      mgmt-ipv4: 10.10.20.14
+      image: grafana/promtail:3.2.0
+      binds:
+      - configs/promtail:/etc/promtail
+      cmd: --config.file=/etc/promtail/promtail-config.yml
+      ports:
+      - 9080:9080
 
   links:
     # ✅ Core ring
